@@ -1,0 +1,54 @@
+.homeContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  padding: 0 8rem;
+  margin-top: 10%;
+}
+
+.inicioVideo {
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.homeText {
+  width: 50%;
+  text-align: center;
+  margin: 1rem;
+  font-size: 1rem;
+  color: #f4f4f4;
+}
+
+.homeLink {
+  color: #2b2b2b;
+  background-color: #f1f2f6;
+  border: 3px solid #2b2b2b;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  margin: 2rem 0 0 0;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+}
+
+span {
+  font-weight: 900;
+  font-style: italic;
+}
+
+@media screen and (max-width: 700px) {
+  .homeContainer {
+    padding: 0 4rem;
+    margin-top: 12rem;
+  }
+
+  .homeText {
+    width: 100%;
+  }
+}
