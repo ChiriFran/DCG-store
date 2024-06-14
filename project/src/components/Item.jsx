@@ -4,22 +4,22 @@ import "../styles/Item.css";
 const Item = ({ producto }) => {
   return (
     <div className="item">
-      <img src={producto.image} alt={producto.title} className="itemImg"></img>
-      <h1 className="itemTitle">
+      <div className="itemImgContainer">
+        <img
+          src={producto.image}
+          alt={producto.title}
+          className="itemImg"
+        ></img>
+        <Link
+          to={`/ProductoDetalles/${producto.id}`}
+          className="ver-mas itemButton"
+        ></Link>
+      </div>
+      <h2 className="itemTitle">
         {producto.title} ({producto.id})
-      </h1>
-      <h4 className="itemCategory">{producto.category}</h4>
-      <h2 className="itemDescription">
-        Descripcion: <br></br>
-        {producto.description.slice(0, 50)}
       </h2>
+      <h4 className="itemCategory">{producto.category}</h4>
       <h3 className="itemPrice">Price: ${producto.price}</h3>{" "}
-      <Link
-        to={`/ProductoDetalles/${producto.id}`}
-        className="ver-mas itemButton"
-      >
-        Ver detalle
-      </Link>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import LogIn from "./components/LogIn.jsx";
 import SignUp from "./components/SingUp.jsx";
 import Carrito from "./components/Carrito.jsx";
 import Checkout from "./components/Checkout.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 
 function App() {
@@ -16,26 +17,27 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <Navbar />
+          <ScrollToTop>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Productos" element={<ItemListContainer />} />
+              <Route
+                path="/Productos/:category"
+                element={<ItemListContainer />}
+              />
+              <Route
+                path="/ProductoDetalles/:id"
+                element={<ItemDetailContainer />}
+              />
+              <Route path="/Nosotros" element={<Nosotros />} />
+              <Route path="*" element={<p>Not Found</p>} />
+              <Route path="/LogIn" element={<LogIn />} />
+              <Route path="/SingUp" element={<SignUp />} />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Productos" element={<ItemListContainer />} />
-            <Route
-              path="/Productos/:category"
-              element={<ItemListContainer />}
-            />
-            <Route
-              path="/ProductoDetalles/:id"
-              element={<ItemDetailContainer />}
-            />
-            <Route path="/Nosotros" element={<Nosotros />} />
-            <Route path="*" element={<p>Not Found</p>} />
-            <Route path="/LogIn" element={<LogIn />} />
-            <Route path="/SingUp" element={<SignUp />} />
-
-            <Route path="/Carrito" element={<Carrito />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
+              <Route path="/Carrito" element={<Carrito />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </ScrollToTop>
         </BrowserRouter>
       </CartProvider>
     </>

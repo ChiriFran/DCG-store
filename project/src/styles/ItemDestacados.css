@@ -8,9 +8,15 @@
   color: #f1f2f6;
 }
 
+.itemDestacadosImgContainer{
+  width: 150px;
+  height: 180px;
+  position: relative;
+}
+
 .itemDestacadosImg {
-  width: 100px;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .itemDestacadosCategory {
@@ -36,7 +42,7 @@
   border-radius: 0.2rem;
 }
 
-.itemDestacadosButton:hover{
+.itemDestacadosButton:hover {
   background-color: rgba(0, 0, 0, 0.698);
 }
 
@@ -45,15 +51,8 @@
     padding: 1rem 2rem;
   }
 
-  .itemDestacadosImg {
-    width: 100px;
-    height: auto;
+  .itemDestacadosButton {
+    margin: 0.5rem 0;
+    padding: 0.5rem 2rem;
   }
-
-  
-.itemDestacadosButton {
-  margin: 0.5rem 0;
-  padding: 0.5rem 2rem;
-}
-  
 }
