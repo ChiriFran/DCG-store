@@ -1,0 +1,15 @@
+.homeNavLinksContainer{
+    display: flex;
+    width: 33%;
+    flex-flow: column;
+    align-items: center;
+}
+
+.homeNavLink {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.homeNavLink:hover{
+    text-decoration: underline;
+}

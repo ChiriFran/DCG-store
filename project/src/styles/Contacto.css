@@ -1,0 +1,22 @@
+.contactoContainer{
+    display: flex;
+    width: 33%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    color: #f4f4f4;
+}
+
+.contactoContainer ul {
+    display: flex;
+    flex-flow: row;
+}
+
+.contactoContainer ul li{
+    list-style: none;
+    margin: 0.5rem 0.5rem;
+}
+
+.contactoContainer img {
+    width: 26px;
+}

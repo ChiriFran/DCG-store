@@ -29,9 +29,31 @@ span {
   font-style: italic;
 }
 
+.linksContainer{
+  display: flex;
+  width: 100%;
+  flex-flow: row;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0 10%;
+}
+
 @media screen and (max-width: 700px) {
   .homeContainer {
     margin-top: 8rem;
+  }
+
+  .linksContainer{
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2%;
+    margin-top: 5rem;
+  }
+  
+
+  .newsletterContainer{
+    flex-flow: row;
   }
 
   .homeText {
