@@ -17,33 +17,24 @@
 .itemDestacadosImg {
   width: 100%;
   height: 100%;
-}
-
-.itemDestacadosCategory {
-  margin: 1rem 0 0 0;
-}
-
-.itemDestacadosPrice {
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
-  margin: 1rem 0 1rem 0;
-}
-
-.itemDestacadosButton {
-  margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
+  position: absolute;
 }
 
 .itemDestacadosButton {
   text-decoration: none;
-  background-color: #000;
-  color: #f1f2f6;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
-.itemDestacadosButton:hover {
-  background-color: rgba(0, 0, 0, 0.698);
+.itemDestacadosCategory{
+  padding: 0.5rem 0;
+}
+
+.itemDestacadosPrice {
+  font-size: 1rem;
+  margin: 0.5rem 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -54,5 +45,11 @@
   .itemDestacadosButton {
     margin: 0.5rem 0;
     padding: 0.5rem 2rem;
+  }
+
+  .itemDestacadosImgContainer{
+    width: 100px;
+    height: 125px;
+    position: relative;
   }
 }
