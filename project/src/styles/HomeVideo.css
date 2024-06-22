@@ -19,7 +19,7 @@
 
 .homeVideoContainer button {
   position: absolute;
-  top: 0;
+  bottom: 5%;
   right: 1rem;
   z-index: 1;
   border: none;

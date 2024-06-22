@@ -40,11 +40,11 @@ function Checkout() {
   return (
     <div className="mainCheckoutContainer">
       <div className="checkoutContainer">
-        <h1 className="checkouTitle">Finalizar compra</h1>
+        <h1 className="checkoutTitle">Finalizar compra</h1>
         <form className="checkoutFormulario" onSubmit={handleSubmit(comprar)}>
           <input
             type="text"
-            placeholder="Nombre y apellido: "
+            placeholder="Nombre completo: "
             {...register("nombre")}
             pattern="[a-zA-Z]+\s[a-zA-Z]+"
             title="Ingresa un nombre completo válido... Ej: Pepito Perez"

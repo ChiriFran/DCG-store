@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import ItemListContainer from "./components/ItemListContainer.jsx";
-import Nosotros from "./components/Nosotros.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import Navbar from "./components/Navbar.jsx";
+import EventosBlogs from "./components/EventosBlogs.jsx";
 import LogIn from "./components/LogIn.jsx";
 import SignUp from "./components/SingUp.jsx";
 import Carrito from "./components/Carrito.jsx";
@@ -29,7 +29,7 @@ function App() {
                 path="/ProductoDetalles/:id"
                 element={<ItemDetailContainer />}
               />
-              <Route path="/Nosotros" element={<Nosotros />} />
+              <Route path="/EventosBlogs" element={<EventosBlogs />} />
               <Route path="*" element={<p>Not Found</p>} />
               <Route path="/LogIn" element={<LogIn />} />
               <Route path="/SingUp" element={<SignUp />} />

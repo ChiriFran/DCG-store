@@ -13,6 +13,7 @@ function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -20,12 +21,11 @@ function SignUp() {
       setError("Las contraseñas no coinciden");
       return;
     }
+    setLoading(true);
+    setError(null);
+    setSuccessMessage("");
     try {
-      const { user } = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const { user } = await createUserWithEmailAndPassword(auth, email, password);
 
       await addDoc(collection(db, "users"), {
         uid: user.uid,
@@ -34,68 +34,78 @@ function SignUp() {
         email: email,
       });
 
-      setSuccessMessage("Registro completado con éxito, inicia sesion en Log in");
-
+      setSuccessMessage("Registro completado con éxito, inicia sesión en Log in");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
       <section className="SignUpFormContainer">
-        <section className="SignUpForm">
-          <div className="form-box">
-            <form className="form" onSubmit={handleSignUp}>
-              <span className="title">Sign up</span>
-              <span className="subtitle">
-                Create a free account with your email.
-              </span>
-              <div className="form-container">
+        <section className="SignUpForm-sing-up">
+          <div className="form-box-sing-up">
+            <form className="form-sing-up" onSubmit={handleSignUp}>
+              <span className="title-sing-up">Create account</span>
+              <span className="subtitle-sing-up">Create a free account with your email.</span>
+              <div className="form-container-sing-up">
                 <input
                   type="text"
-                  className="input"
+                  className="input-sing-up"
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  disabled={loading}
                 ></input>
                 <input
                   type="text"
-                  className="input"
+                  className="input-sing-up"
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
+                  disabled={loading}
                 ></input>
                 <input
                   type="email"
-                  className="input"
+                  className="input-sing-up"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  disabled={loading}
                 ></input>
                 <input
                   type="password"
-                  className="input"
+                  className="input-sing-up"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  disabled={loading}
                 ></input>
                 <input
                   type="password"
-                  className="input"
+                  className="input-sing-up"
                   placeholder="Confirm Password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
+                  disabled={loading}
                 ></input>
-                <button type="submit">Sign up</button>
+                <button type="submit" disabled={loading}>
+                  {loading ? "Signing up..." : "Sign up"}
+                </button>
               </div>
             </form>
-            {error && <p>{error}</p>}
-            {successMessage && <p>{successMessage}</p>}
-            <div className="form-section">
+            {error && <p className="error-message">{error}</p>}
+            {successMessage && <p className="success-message">{successMessage}</p>}
+            <div className="form-section-sing-up">
               <p>
-                Have an account? <Link to="/LogIn">Log In</Link> or{" "}
-                <Link to="/">Go Home</Link>
+                Have an account? <Link to="/LogIn">Log In</Link> or <Link to="/">Go Home</Link>
               </p>
             </div>
           </div>

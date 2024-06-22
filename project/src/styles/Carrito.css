@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: start;
   margin-top: 20vh;
+  color: #f4f4f4;
 }
 
 .titulo,
@@ -18,7 +19,6 @@
 .titulo {
   margin-bottom: 2rem;
   font-size: 1rem;
-  color: black;
 }
 
 .precioTotal {
@@ -36,8 +36,17 @@
 .vaciarCarrito {
   border: none;
   background-color: #f1f2f6;
-  padding: 1rem 0;
+  padding: 0.6rem 2rem;
   margin-top: 1rem;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.vaciarCarrito svg{
+  margin: 0 0.5rem;
 }
 
 .buttonContainer {
@@ -65,6 +74,10 @@ button {
   color: #f1f2f6;
   font-size: 1rem;
   margin-top: 3rem;
+}
+
+.carritoContainerDesktop li{
+  list-style: none;
 }
 
 @media screen and (max-width: 700px) {

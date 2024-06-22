@@ -7,6 +7,7 @@ function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState("");
 
@@ -46,6 +47,8 @@ function LogIn() {
 
   const handleLogIn = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
     try {
       await signInWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
@@ -56,6 +59,8 @@ function LogIn() {
       localStorage.setItem("loggedIn", "true");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,51 +79,54 @@ function LogIn() {
   return (
     <>
       <section className="LogInFormContainer">
-        <section className="LogInForm">
-          <div className="form-box">
+        <section className="LogInForm-log-in">
+          <div className="form-box-log-in">
             {loggedIn ? (
               <div className="logedInContainer">
                 <p className="logedInUser">Welcome {userEmail}</p>
-                <p className="logedInTitle">You are logged in!</p>
-                <button className="logedInButton" onClick={handleLogOut}>
-                  Log out
-                </button>
                 <Link className="logedInButtonTienda" to="/Productos">
                   ¡Visitar Tienda!
                 </Link>
+                <button onClick={handleLogOut}>Log out</button>
               </div>
             ) : (
-              <form className="form" onSubmit={handleLogIn}>
-                <span className="title">{loggedIn ? "Log out" : "Log in"}</span>
-                <span className="subtitle">Welcome back.</span>
-                <div className="form-container">
+              <form className="form-log-in" onSubmit={handleLogIn}>
+                <span className="title-log-in">{loggedIn ? "Log out" : "Log in"}</span>
+                <span className="subtitle-log-in">Welcome back.</span>
+                <div className="form-container-log-in">
                   <input
                     type="email"
-                    className="input"
+                    className="input-log-in"
                     placeholder="Email"
+                    autoComplete="off"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    disabled={loading}
                   ></input>
                   <input
                     type="password"
-                    className="input"
+                    className="input-log-in"
                     placeholder="Password"
+                    autoComplete="off"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    disabled={loading}
                   ></input>
-                  <button type="submit">
-                    {loggedIn ? "Log out" : "Log in"}
+                  <button type="submit" className="logedInButton" disabled={loading}>
+                    {loading ? "Logging in..." : "Log in"}
                   </button>
                 </div>
               </form>
             )}
-            {error && <p>{error}</p>}
-            <div className="form-section">
-              <p>
-                Don't have an account? <Link to="/SingUp">Sign Up</Link> or{" "}
-                <Link to="/">Go Home</Link>
-              </p>
-            </div>
+            {error && <p className="error-message">{error}</p>}
+            {!loggedIn && !loading && (
+              <div className="form-section-log-in">
+                <p>
+                  Don't have an account? <Link to="/SignUp">Sign Up</Link> or{" "}
+                  <Link to="/">Go Home</Link>
+                </p>
+              </div>
+            )}
           </div>
         </section>
       </section>

@@ -5,6 +5,7 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  color: #f4f4f4;
 }
 
 .CheckoutContainerCompraFinalizada {
@@ -14,6 +15,13 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  color: #f4f4f4;
+}
+
+.checkoutTitle{
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
 }
 
 .checkoutFormulario {
@@ -25,6 +33,12 @@
   border: none;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.817);
+  transition: .4s;
+}
+.checkoutFormulario input:hover {
+  background-color: rgba(255, 255, 255, 0.931);
+  transition: .4s;
 }
 
 .CheckoutContainerCompraFinalizadaTitle {

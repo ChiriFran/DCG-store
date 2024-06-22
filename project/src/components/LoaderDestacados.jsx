@@ -1,12 +1,12 @@
-import { ClipLoader } from "react-spinners";
+import { HashLoader } from "react-spinners";
 import '../styles/LoaderDestacados.css'
 
 function LoaderDestacados() {
   return (
     <div className="clipLoaderContianerDestacados">
-      <ClipLoader
+      <HashLoader
         color="#fff"
-        size={80}
+        size={50}
         aria-label="Loading..."
         data-testid="loader"
       />
