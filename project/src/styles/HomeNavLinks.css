@@ -2,7 +2,8 @@
     display: flex;
     width: 33%;
     flex-flow: column;
-    align-items: center;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .homeNavLink {
@@ -11,5 +12,5 @@
 }
 
 .homeNavLink:hover{
-    text-decoration: underline;
+    text-decoration: underline dashed;
 }

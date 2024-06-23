@@ -3,7 +3,7 @@ import "../styles/ItemListDestacados.css";
 
 const ItemListDestacados = ({ productos }) => {
   return (
-    <div>
+    <div className="productosDestacadosContainer">
       <div className="productosDestacados">
         {productos.map((prod) => (
           <ItemDestacados producto={prod} key={prod.id} />

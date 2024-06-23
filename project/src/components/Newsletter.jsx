@@ -19,8 +19,9 @@ function Newsletter() {
     <div className="newsletterContainer">
       <h3 className="newsletterTitle">Forma parte de nuestra comunidad</h3>
       <p className="newsletterText">
-        Suscríbase a nuestro boletín de noticias para estar al día de las
-        últimas novedades, ofertas exclusivas y mucho más.
+        Forma parte de nuestra comunidad y
+        recibi promociones y descuentos exclusivos para miembros de nuestra
+        comunidad.
       </p>
       <form className="newsletterForm" onSubmit={handleSubmit}>
         <div className="formGroup">

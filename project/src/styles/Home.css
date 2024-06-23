@@ -32,9 +32,18 @@ span {
   display: flex;
   width: 100%;
   flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.links{
+  display: flex;
+  width: 70%;
+  flex-flow: row;
   align-items: baseline;
   justify-content: center;
-  padding: 0 10%;
+  padding: 0 2rem;
+
 }
 
 @media screen and (max-width: 700px) {

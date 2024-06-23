@@ -12,9 +12,11 @@ const Home = () => {
       <h3 className="homeText">DCG Basics</h3>
       <ItemListContainerDestacados />
       <div className="linksContainer">
-        <HomeNavLinks />
-        <Newsletter />
-        <Contacto />
+        <div className="links">
+          <HomeNavLinks />
+          <Newsletter />
+          <Contacto />
+        </div>
       </div>
     </section>
   );

@@ -1,14 +1,9 @@
 .itemDestacados {
-  padding: 1rem 3rem;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: space-around;
   border-radius: 0.5rem;
   color: #f1f2f6;
 }
 
-.itemDestacadosImgContainer{
+.itemDestacadosImgContainer {
   width: 150px;
   height: 180px;
   position: relative;
@@ -18,6 +13,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 0.3rem;
 }
 
 .itemDestacadosButton {
@@ -28,7 +24,7 @@
   cursor: pointer;
 }
 
-.itemDestacadosCategory{
+.itemDestacadosCategory {
   padding: 0.5rem 0;
 }
 
@@ -37,9 +33,87 @@
   margin: 0.5rem 0;
 }
 
+.card {
+  width: 190px;
+  height: 254px;
+  padding: 0.8em;
+  background: #2727277c;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(168, 143, 143, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.card-img {
+  background-color: #4e4e4e;
+  height: 40%;
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.card-info {
+  padding-top: 10%;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #cdcbcb;
+}
+
+/*Text*/
+.text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.text-body {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+/*Button*/
+.card-button {
+  border: 1px solid #8d8c8c;
+  display: flex;
+  padding: 0.3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  background-color: #8d8c8c;
+}
+
+/*Hover*/
+.card-img:hover {
+  transform: translateY(-25%);
+  box-shadow: rgba(246, 246, 246, 0.165) 0px 13px 47px -5px,
+    rgba(94, 94, 94, 0.3) 0px 8px 16px -8px;
+}
+
+.card-button:hover {
+  border: 1px solid #d5cdc7;
+  background-color: #d5cdc7;
+}
+
 @media screen and (max-width: 700px) {
-  .itemDestacados {
-    padding: 1rem 2rem;
+  .card {
+    max-width: 300px;
+    width: 100%;
+    height: 450px;
+    margin: 3rem 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .itemDestacadosButton {
@@ -47,9 +121,19 @@
     padding: 0.5rem 2rem;
   }
 
-  .itemDestacadosImgContainer{
-    width: 100px;
-    height: 125px;
+  .itemDestacadosImgContainer {
+    width: 230px;
+    height: 250px;
     position: relative;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .itemDestacadosPrice {
+    font-size: 1.5rem;
+    margin: 0.5rem 1rem;
   }
 }
