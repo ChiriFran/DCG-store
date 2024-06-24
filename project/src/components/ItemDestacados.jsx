@@ -4,8 +4,8 @@ import "../styles/ItemDestacados.css";
 const ItemDestacados = ({ producto }) => {
   return (
     <>
-      <div class="card itemDestacados">
-        <div class="card-img itemDestacadosImgContainer">
+      <div className="card itemDestacados">
+        <div className="card-img itemDestacadosImgContainer">
           <img
             src={producto.image}
             alt={producto.title}
@@ -16,7 +16,7 @@ const ItemDestacados = ({ producto }) => {
             className="ver-mas itemDestacadosButton"
           ></Link>
         </div>
-        <div class="card-info">
+        <div className="card-info">
           <h4 className="itemDestacadosCategory">{producto.category}</h4>
           <h4 className="text-body">
             {producto.title.length > 6
@@ -24,11 +24,11 @@ const ItemDestacados = ({ producto }) => {
               : producto.title}
           </h4>
         </div>
-        <div class="card-footer">
+        <div className="card-footer">
           <span className="ntext-title itemDestacadosPrice">
             ${producto.price}
           </span>{" "}
-          <div class="card-button">
+          <div className="card-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="icon icon-tabler icon-tabler-shopping-cart"

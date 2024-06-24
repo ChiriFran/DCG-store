@@ -14,7 +14,7 @@
   margin-bottom: 20px;
 }
 
-.newsletterText{
+.newsletterText {
   font-size: 0.8rem;
   font-weight: 200;
   padding: 0 30% 1rem;
@@ -27,6 +27,7 @@
 
 .formGroup {
   margin-bottom: 15px;
+  position: relative; /* Ensure relative positioning for absolute elements inside */
 }
 
 .formGroup label {
@@ -35,12 +36,14 @@
 }
 
 .formGroup input {
+  max-width: 300px;
   width: 100%;
   padding: 8px;
   border: 1px solid #9c9c9c99;
   border-radius: 4px;
   background-color: rgba(247, 247, 247, 0.168);
   color: #f4f4f4;
+  box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
 }
 
 button[type="submit"] {
@@ -59,12 +62,44 @@ button[type="submit"]:hover {
   transition: 0.4s;
 }
 
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.buttonSubmitting {
+  background-color: #17a2b8;
+}
+
+.successMessage {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.6rem;
+  font-weight: bold;
+  background-color: #ffd1d1dc;
+  padding: 8px 10%;
+  border-radius: 4px;
+  border: 1px solid #ff5c5c;
+  text-align: center;
+  width: 200px;
+  box-sizing: border-box;
+  margin: 0 1rem;
+  margin-top: 5px;
+}
+
 @media screen and (max-width: 700px) {
   .newsletterContainer {
     margin: 3rem 0;
   }
 
-  .newsletterText{
+  .newsletterText {
     font-size: 0.8rem;
     font-weight: 200;
     padding: 0 8% 2rem;
