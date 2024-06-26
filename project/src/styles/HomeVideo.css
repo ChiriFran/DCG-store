@@ -18,17 +18,13 @@
 }
 
 .homeVideoContainer button {
-  position: absolute;
-  bottom: 5%;
-  right: 1rem;
-  z-index: 1;
   border: none;
   background-color: transparent;
 }
 
 .buttonShopNow {
   --glow-color: rgb(255, 254, 255);
-  --glow-spread-color: rgba(236, 236, 237, 0.781);
+  --glow-spread-color: rgba(236, 236, 237, 0.981);
   --enhanced-glow-color: rgb(249, 243, 255);
   --btn-color: rgb(208, 188, 228);
   border: 0.25em solid var(--glow-color);
@@ -45,6 +41,7 @@
   text-shadow: 0 0 0.5em var(--glow-color);
   position: relative;
   transition: all 0.3s;
+  animation: beat .5s infinite;
 }
 
 .buttonShopNow::after {
@@ -85,16 +82,29 @@
   background-color: #f1f2f6;
   border-radius: 0.1rem;
   text-decoration: none;
-  padding: 0.5rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0.3rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 800;
   z-index: 50;
 }
 
-.volumeSlider {
+.homeLink span{
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.videoControlsContainer {
   position: absolute;
-  bottom: 4rem;
-  right: 5rem;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.volumeSlider {
   z-index: 1;
   width: 150px;
   height: 5px;
@@ -125,24 +135,65 @@
     height: 60vh;
     margin-bottom: 8rem;
   }
+
+  .videoControlsContainer {
+    bottom: 0;
+    right: 1rem;
+  }
+
+  .volumeSlider {
+    width: 80px;
+    height: 3px;
+  }
+
   .homeVideoContainer video {
     width: auto;
     height: auto;
   }
+}
 
-  .volumeSlider {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 5rem;
-    z-index: 1;
-    width: 150px;
-    height: 5px;
-    background-color: rgba(0, 0, 0, 0.639);
-    -webkit-appearance: none;
-    appearance: none;
+/* Animaciones */
+.typedText {
+  display: inline-block;
+}
+
+.typedTextContent {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  animation: typing 2s steps(10) infinite, blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
   }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
 
-  .homeVideoContainer button {
-    bottom: 0;
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+/* Beat Animation */
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
 }

@@ -65,11 +65,6 @@ const Navbar = () => {
           </div>
           <ul className="navMenu">
             <li>
-              <Link to="/" className="link" onClick={toggleMenu}>
-                Inicio
-              </Link>
-            </li>
-            <li>
               <Link to="/Productos" className="link" onClick={toggleMenu}>
                 Tienda
               </Link>
@@ -214,11 +209,6 @@ const Navbar = () => {
           )}
         </ul>
         <ul className="navMenuDesktop">
-          <li>
-            <Link to="/" className="link">
-              Home
-            </Link>
-          </li>
           <li>
             <Link to="/Productos" className="link">
               Tienda

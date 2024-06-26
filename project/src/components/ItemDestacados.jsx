@@ -2,13 +2,21 @@ import { Link } from "react-router-dom";
 import "../styles/ItemDestacados.css";
 
 const ItemDestacados = ({ producto }) => {
+  // Asegúrate de que 'producto' no es undefined
+  if (!producto) {
+    return null;
+  }
+
+  // Asegúrate de que 'producto.title' no es undefined
+  const title = producto.title ? producto.title : "";
+
   return (
     <>
       <div className="card itemDestacados">
         <div className="card-img itemDestacadosImgContainer">
           <img
             src={producto.image}
-            alt={producto.title}
+            alt={title}
             className="itemDestacadosImg"
           ></img>
           <Link
@@ -19,9 +27,7 @@ const ItemDestacados = ({ producto }) => {
         <div className="card-info">
           <h4 className="itemDestacadosCategory">{producto.category}</h4>
           <h4 className="text-body">
-            {producto.title.length > 6
-              ? producto.title.substring(0, 10) + "..."
-              : producto.title}
+            {title.length > 6 ? title.substring(0, 10) + "..." : title}
           </h4>
         </div>
         <div className="card-footer">
