@@ -35,7 +35,7 @@ function Newsletter() {
       setEmail("");
 
       // Mostrar mensaje de éxito
-      setSuccessMessage("¡Suscripción completada con éxito!");
+      setSuccessMessage("¡Ya estas suscrito a nuestro Newsletter!");
 
       // Ocultar el mensaje después de 5 segundos
       setTimeout(() => {
