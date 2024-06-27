@@ -30,7 +30,7 @@ span {
 
 .links{
   display: flex;
-  width: 50%;
+  width: 70%;
   flex-flow: row;
   align-items: baseline;
   justify-content: center;
