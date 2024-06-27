@@ -18,7 +18,6 @@ const Item = ({ producto }) => {
       <h2 className="itemTitle">
         {producto.title} ({producto.id})
       </h2>
-      <h4 className="itemCategory">{producto.category}</h4>
       <h3 className="itemPrice">Price: ${producto.price}</h3>{" "}
     </div>
   );

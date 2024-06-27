@@ -11,27 +11,22 @@ function FooterNavLinks() {
         </Link>
       </ul>
       <ul>
-        <Link to="./ItemListContainer.jsx" className="footerNavLink">
-          Tienda
-        </Link>
-      </ul>
-      <ul>
-        <Link to="/men's clothing" className="footerNavLink">
+        <Link to="/Productos/men's clothing"  className="footerNavLink">
           Men's Clothing
         </Link>
       </ul>
       <ul>
-        <Link to="/women's clothing" className="footerNavLink">
+        <Link to="/Productos/women's clothing" className="footerNavLink">
           Women's Clothing
         </Link>
       </ul>
       <ul>
-        <Link to="/jewelery" className="footerNavLink">
+        <Link to="/Productos/jewelery" className="footerNavLink">
           Jewelery
         </Link>
       </ul>
       <ul>
-        <Link to="/electronics" className="footerNavLink">
+        <Link to="/Productos/electronics" className="footerNavLink">
           Electronics
         </Link>
       </ul>

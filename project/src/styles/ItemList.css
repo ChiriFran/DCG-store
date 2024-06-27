@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
-  gap: 2rem 1.5rem;
+  gap: 1rem 1rem;
   padding: 4rem 3rem;
   overflow: hidden;
   z-index: 1;
