@@ -1,16 +1,20 @@
-.homeNavLinksContainer{
-    display: flex;
-    width: 33%;
-    flex-flow: column;
-    align-items: baseline;
-    justify-content: center;
+.homeNavLinksContainer {
+  display: flex;
+  width: 33%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.homeNavLinksContainer ul {
+  margin: 0.3rem 0;
 }
 
 .homeNavLink {
-    color: #f4f4f4;
-    text-decoration: none;
+  color: #f4f4f4;
+  text-decoration: none;
+  padding-bottom: 0.1rem;
 }
 
-.homeNavLink:hover{
-    text-decoration: underline dashed;
+.homeNavLink:hover {
+  text-decoration: underline;
 }

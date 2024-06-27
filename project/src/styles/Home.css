@@ -15,14 +15,6 @@
   overflow: hidden;
 }
 
-.homeText {
-  width: 50%;
-  text-align: center;
-  margin: 1rem;
-  font-size: 1.2rem;
-  color: #f4f4f4;
-}
-
 span {
   font-weight: 900;
   font-style: italic;
@@ -38,7 +30,7 @@ span {
 
 .links{
   display: flex;
-  width: 70%;
+  width: 50%;
   flex-flow: row;
   align-items: baseline;
   justify-content: center;

@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <section className="homeContainer">
       <HomeVideo />
-      <h3 className="homeText">DCG Basics</h3>
       <ItemListContainerDestacados />
       <div className="linksContainer">
         <div className="links">

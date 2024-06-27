@@ -55,12 +55,12 @@ function Newsletter() {
       <h3 className="newsletterTitle">Forma parte de nuestra comunidad</h3>
       <p className="newsletterText">
         Forma parte de nuestra comunidad y recibe promociones y descuentos
-        exclusivos para miembros de nuestra comunidad.
+        exclusivos.
       </p>
       <form className="newsletterForm" onSubmit={handleSubmit}>
         <div className="formGroup">
-          <label htmlFor="email">Email:</label>
           <input
+            placeholder="email@example.com"  
             type="email"
             id="email"
             value={email}

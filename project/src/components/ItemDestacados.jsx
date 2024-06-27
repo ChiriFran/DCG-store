@@ -25,7 +25,6 @@ const ItemDestacados = ({ producto }) => {
           ></Link>
         </div>
         <div className="card-info">
-          <h4 className="itemDestacadosCategory">{producto.category}</h4>
           <h4 className="text-body">
             {title.length > 6 ? title.substring(0, 10) + "..." : title}
           </h4>

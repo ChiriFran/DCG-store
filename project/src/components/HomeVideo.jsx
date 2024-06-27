@@ -4,8 +4,8 @@ import "../styles/HomeVideo.css";
 
 function HomeVideo() {
   const videoRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(false);
-  const [volume, setVolume] = useState(0.03);
+  const [isMuted, setIsMuted] = useState(true); // Inicialmente silenciado
+  const [volume, setVolume] = useState(0.1);
   const [textIndex, setTextIndex] = useState(0);
   const texts = ["SHOP NOW", "BUY NOW"];
 
@@ -15,6 +15,9 @@ function HomeVideo() {
     const handleLoadedMetadata = () => {
       video.volume = volume;
       video.muted = isMuted;
+      video.play().catch((error) => {
+        console.log("Failed to autoplay:", error);
+      });
     };
 
     video.addEventListener("loadedmetadata", handleLoadedMetadata);
@@ -27,7 +30,7 @@ function HomeVideo() {
   useEffect(() => {
     const interval = setInterval(() => {
       setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 4000); // Cambia el texto cada 4 segundos
+    }, 2000); // Cambia el texto cada 2 segundos
 
     return () => clearInterval(interval);
   }, []);
@@ -47,11 +50,36 @@ function HomeVideo() {
 
   return (
     <div className="homeVideoContainer">
+      <div className="clickToPlayMessage">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-click"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="rgba(255, 255, 255, 0.209)"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 12l3 0" />
+          <path d="M12 3l0 3" />
+          <path d="M7.8 7.8l-2.2 -2.2" />
+          <path d="M16.2 7.8l2.2 -2.2" />
+          <path d="M7.8 16.2l-2.2 2.2" />
+          <path d="M12 12l9 3l-4 2l-2 4l-3 -9" />
+        </svg>{" "}
+        <p>Click anywhere and listen us</p>
+      </div>
       <video
         ref={videoRef}
         autoPlay
+        playsInline
         muted={isMuted}
         onEnded={() => videoRef.current.pause()}
+        onClick={toggleMute} // Activar/desactivar audio al hacer clic en el video
       >
         <source
           src={`../../media/homeVideo.mp4?${new Date().getTime()}`}

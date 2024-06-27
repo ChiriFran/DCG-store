@@ -29,7 +29,7 @@
 }
 
 .itemDestacadosPrice {
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin: 0.5rem 0;
 }
 
@@ -37,19 +37,18 @@
   width: 280px;
   height: 400px;
   padding: 1rem 2rem;
-  background: #2727277c;
+  background: #27272700;
   position: relative;
   overflow: visible;
-  box-shadow: 0 1px 3px rgba(168, 143, 143, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .card-img {
   background-color: #4e4e4e;
-  height: 40%;
+  height: 100%;
   width: 100%;
   border-radius: 0.5rem;
   transition: 0.3s ease;
@@ -70,7 +69,7 @@ svg {
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
-  border-top: 1px solid #cdcbcb;
+  border-top: 1px solid #cdcbcb63;
 }
 
 /*Text*/
@@ -93,19 +92,19 @@ svg {
   cursor: pointer;
   border-radius: 50px;
   transition: 0.3s ease-in-out;
-  background-color: #8d8c8c;
+  background-color: #8d8c8c2d;
 }
 
 /*Hover*/
 .card-img:hover {
-  transform: translateY(-25%);
+  transform: translateY(-10%);
   box-shadow: rgba(246, 246, 246, 0.165) 0px 13px 47px -5px,
     rgba(94, 94, 94, 0.3) 0px 8px 16px -8px;
 }
 
 .card-button:hover {
   border: 1px solid #d5cdc7;
-  background-color: #d5cdc7;
+  background-color: #000000;
 }
 
 @media screen and (max-width: 700px) {
