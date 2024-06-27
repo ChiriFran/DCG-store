@@ -1,0 +1,20 @@
+.footerNavLinksContainer {
+  display: flex;
+  width: 33%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.footerNavLinksContainer ul {
+  margin: 0.3rem 0;
+}
+
+.footerNavLink {
+  color: #f4f4f4;
+  text-decoration: none;
+  padding-bottom: 0.1rem;
+}
+
+.footerNavLink:hover {
+  text-decoration: underline;
+}

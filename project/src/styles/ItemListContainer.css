@@ -34,3 +34,21 @@
 .rangoMaximoPrecio {
   font-size: 1.2rem;
 }
+
+.footerNavlinksContainer {
+  display: flex;
+  width: 100%;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin: 8% 0 12% 0;
+}
+
+.footerNavlinks {
+  display: flex;
+  width: 70%;
+  flex-flow: row;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0 2rem;
+}

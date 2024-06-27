@@ -10,8 +10,10 @@
 }
 
 .newsletterTitle {
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin-bottom: 20px;
+  font-weight: 900;
+  letter-spacing: 3px;
 }
 
 .newsletterText {

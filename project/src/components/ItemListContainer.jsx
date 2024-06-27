@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import Loader from "./Loader";
 import SearchFilters from "./SearchFilters";
+import FooterNavLinks from "./FooterNavLinks";
+import Contacto from "./Contacto";
+import Newsletter from "./Newsletter";
 
 import "../styles/ItemListContainer.css";
 
@@ -71,6 +74,13 @@ const ItemListContainer = () => {
       <SearchFilters onSearch={handleSearch} />
       <div className="productosContainer">
         <ItemList productos={productos} titulo={titulo} />
+      </div>
+      <div className="footerNavlinksContainer">
+        <div className="footerNavlinks">
+          <FooterNavLinks />
+          <Newsletter />
+          <Contacto />
+        </div>
       </div>
     </>
   );
