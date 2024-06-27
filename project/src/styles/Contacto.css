@@ -17,8 +17,9 @@
     margin: 0.5rem 0.5rem;
 }
 
-.contactoContainer img {
-    width: 26px;
+.contactoContainer svg {
+    width: 28px;
+    height: 28px;
 }
 
 .contactoContainer h3{
