@@ -210,33 +210,33 @@ const Navbar = () => {
         </ul>
         <ul className="navMenuDesktop">
           <li>
+            <Link to="/" className="link">
+              Home
+            </Link>
+          </li>
+          <li>
             <Link to="/Productos" className="link">
-              Tienda
+              Shop
             </Link>
           </li>
           <li>
             <Link to="/Productos/men's clothing" className="link">
-              Men's Clothing
-            </Link>
-          </li>
-          <li>
-            <Link to="/Productos/women's clothing" className="link">
-              Women's Clothing
-            </Link>
-          </li>
-          <li>
-            <Link to="/Productos/jewelery" className="link">
-              Jewelery
-            </Link>
-          </li>
-          <li>
-            <Link to="/Productos/electronics" className="link">
-              Electronics
+              Music
             </Link>
           </li>
           <li>
             <Link to="/EventosBlogs" className="link">
-              Events and Blogs
+              Events
+            </Link>
+          </li>
+          <li>
+            <Link to="/EventosBlogs" className="link">
+              Blogs
+            </Link>
+          </li>
+          <li>
+            <Link to="/EventosBlogs" className="link">
+              About us
             </Link>
           </li>
         </ul>
