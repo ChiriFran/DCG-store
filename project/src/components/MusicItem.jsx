@@ -5,19 +5,15 @@ const MusicItem = ({ disco }) => {
   return (
     <div className="musicItem">
       <div className="musicItemImgContainer">
-        <img
-          src={disco.image}
-          alt={disco.title}
-          className="musicItemImg"
-        ></img>
+        <img src={disco.image} alt={disco.title} className="musicItemImg"></img>
         <Link
           to={`/ProductoDetalles/${disco.id}`}
           className="ver-mas musicItemButton"
         ></Link>
+        <div className="musicItemOverlay">
+          <div className="musicItemTitle">{disco.title}</div>
+        </div>
       </div>
-      <h2 className="musicItemTitle">
-        {disco.title}
-      </h2>
     </div>
   );
 };
