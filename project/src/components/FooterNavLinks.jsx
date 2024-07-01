@@ -11,23 +11,23 @@ function FooterNavLinks() {
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos/men's clothing"  className="footerNavLink">
-          Men's Clothing
+        <Link to="/Productos/gorras"  className="footerNavLink">
+          Gorras
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos/women's clothing" className="footerNavLink">
-          Women's Clothing
+        <Link to="/Productos/remeras" className="footerNavLink">
+          Remeras
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos/jewelery" className="footerNavLink">
-          Jewelery
+        <Link to="/Productos/bolsos" className="footerNavLink">
+          Bolsos
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos/electronics" className="footerNavLink">
-          Electronics
+        <Link to="/Productos/buzos" className="footerNavLink">
+          Buzos
         </Link>
       </ul>
       <ul>

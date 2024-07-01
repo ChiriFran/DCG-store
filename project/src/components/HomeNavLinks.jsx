@@ -11,28 +11,23 @@ function HomeNavLinks() {
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos" className="homeNavLink">
-          Tienda
+        <Link to="/Productos/gorras"  className="homeNavLink">
+          Gorras
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos/men's clothing" className="homeNavLink">
-          Men's Clothing
+        <Link to="/Productos/remeras" className="homeNavLink">
+          Remeras
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos/women's clothing" className="homeNavLink">
-          Women's Clothing
+        <Link to="/Productos/bolsos" className="homeNavLink">
+          Bolsos
         </Link>
       </ul>
       <ul>
-        <Link to="/Productos/jewelery" className="homeNavLink">
-          Jewelery
-        </Link>
-      </ul>
-      <ul>
-        <Link to="/Productos/electronics" className="homeNavLink">
-          Electronics
+        <Link to="/Productos/buzos" className="homeNavLink">
+          Buzos
         </Link>
       </ul>
       <ul>

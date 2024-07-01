@@ -4,6 +4,7 @@ import { db } from "../firebase/config";
 import { useParams } from "react-router-dom";
 
 import ItemList from "./ItemList";
+import MusicList from "./MusicList";
 import Loader from "./Loader";
 import SearchFilters from "./SearchFilters";
 import FooterNavLinks from "./FooterNavLinks";
@@ -14,6 +15,7 @@ import "../styles/ItemListContainer.css";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
+  const [discos, setDiscos] = useState([]);
   const [titulo, setTitulo] = useState("Todos los productos");
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,26 +25,42 @@ const ItemListContainer = () => {
   useEffect(() => {
     setIsLoading(true);
     const productosDb = collection(db, "productos");
-    let q = productosDb;
+    const musicDb = collection(db, "music");
+    let qProductos = productosDb;
+    let qMusic = musicDb;
 
     // Construir la consulta según los filtros aplicados
     if (searchTerm && category) {
-      q = query(
+      qProductos = query(
         productosDb,
         where("title", "==", searchTerm),
         where("category", "==", category)
       );
+      qMusic = query(
+        musicDb,
+        where("title", "==", searchTerm),
+        where("category", "==", category)
+      );
     } else if (searchTerm) {
-      q = query(productosDb, where("title", "==", searchTerm));
+      qProductos = query(productosDb, where("title", "==", searchTerm));
+      qMusic = query(musicDb, where("title", "==", searchTerm));
     } else if (category) {
-      q = query(productosDb, where("category", "==", category));
+      qProductos = query(productosDb, where("category", "==", category));
+      qMusic = query(musicDb, where("category", "==", category));
     } else if (urlCategory) {
-      q = query(productosDb, where("category", "==", urlCategory));
+      qProductos = query(productosDb, where("category", "==", urlCategory));
+      qMusic = query(musicDb, where("category", "==", urlCategory));
     }
 
-    getDocs(q)
-      .then((resp) => {
-        setProductos(resp.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    Promise.all([getDocs(qProductos), getDocs(qMusic)])
+      .then(([productosResp, musicResp]) => {
+        setProductos(
+          productosResp.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        );
+        const sortedDiscos = musicResp.docs
+          .map((doc) => ({ ...doc.data(), id: doc.id }))
+          .sort((a, b) => parseInt(b.id) - parseInt(a.id)); // Ordenar de mayor a menor según el id convertido a número
+        setDiscos(sortedDiscos);
         setIsLoading(false);
         if (category) {
           setTitulo(capitalizeFirstLetter(category));
@@ -74,7 +92,9 @@ const ItemListContainer = () => {
       <SearchFilters onSearch={handleSearch} />
       <div className="productosContainer">
         <ItemList productos={productos} titulo={titulo} />
+        <MusicList discos={discos} titulo="Music" />
       </div>
+
       <div className="footerNavlinksContainer">
         <div className="footerNavlinks">
           <FooterNavLinks />

@@ -47,7 +47,7 @@ const Navbar = () => {
         }`}
       >
         <Link to="/" className="link">
-          <h1 className="brand">Detroit Classic Gallery</h1>
+          <h1 className="brand">D-troit Class'c Galery</h1>
         </Link>
 
         <div
@@ -220,7 +220,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/Productos/men's clothing" className="link">
+            <Link to="/Productos/music" className="link">
               Music
             </Link>
           </li>
