@@ -1,15 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext"; // Importa el contexto del carrito
+import { CartContext } from "../context/CartContext"; 
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para controlar si el usuario ha iniciado sesión
-  const { carrito } = useContext(CartContext); // Usa el contexto del carrito
-  const [isScrolled, setIsScrolled] = useState(false); // Estado para controlar el scroll
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { carrito } = useContext(CartContext); 
+  const [isScrolled, setIsScrolled] = useState(false); 
 
-  // Función para calcular la cantidad total de elementos en el carrito
   const getTotalItems = () => {
     return carrito.reduce((total, prod) => total + prod.cantidad, 0);
   };
@@ -20,7 +19,7 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false); // Actualizar el estado de inicio de sesión al cerrar sesión
+    setIsLoggedIn(false); 
   };
 
   useEffect(() => {
