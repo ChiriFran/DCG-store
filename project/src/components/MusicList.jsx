@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase/config";
 import MusicItem from "./MusicItem";
+import Loader from "./Loader";
 import "../styles/MusicList.css";
 
 function MusicList({ searchTerm, category, urlCategory }) {
@@ -41,7 +42,7 @@ function MusicList({ searchTerm, category, urlCategory }) {
       });
   }, [searchTerm, category, urlCategory]);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
 
   return (
     <>

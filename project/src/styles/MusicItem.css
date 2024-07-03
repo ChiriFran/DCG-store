@@ -2,6 +2,7 @@
 .musicItem{
   width: auto;
   height: 420px;
+  background-color: rgba(128, 128, 128, 0.472);
 }
 
 iframe {
