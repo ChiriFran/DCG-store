@@ -16,7 +16,7 @@ const Item = ({ producto }) => {
         ></Link>
       </div>
       <h2 className="itemTitle">
-        {producto.title} ({producto.id})
+        {producto.title}
       </h2>
       <h3 className="itemPrice">Price: ${producto.price}</h3>{" "}
     </div>

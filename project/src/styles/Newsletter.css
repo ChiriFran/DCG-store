@@ -45,31 +45,30 @@
   box-sizing: border-box;
 }
 
-button[type="submit"] {
+.submitButton {
   padding: 10px 15px;
   border: none;
-  background-color: #0c4a1839;
+  background-color: #0c4a18;
   border: 3px solid #ffffff20;
   color: rgba(247, 247, 247, 0.946);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.4s;
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
 }
 
-button[type="submit"]:hover {
-  background-color: #d8d8d8d7;
-  border: 3px solid #6363639d;
+.submitButton:hover {
+  background-color: #d8d8d8;
+  border-color: #636363;
   color: #000;
-  transition: 0.4s;
 }
 
-button:disabled {
+.submitButton:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.buttonSubmitting {
+.submitting {
   background-color: #17a2b8;
 }
 
@@ -83,7 +82,7 @@ button:disabled {
   color: #000;
   font-size: 1.2rem;
   padding: 0.2rem 1rem;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .errorMessage {

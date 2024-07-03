@@ -3,6 +3,7 @@ import ItemListContainerDestacados from "./ItemListContainerDestacados";
 import HomeVideo from "./HomeVideo";
 import HomeNavLinks from "./HomeNavLinks";
 import Newsletter from "./Newsletter";
+import PopUpNewsletter from "./PopUpNewsletter";
 import Contacto from "./Contacto";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
         <div className="links">
           <HomeNavLinks />
           <Newsletter />
+          <PopUpNewsletter />
           <Contacto />
         </div>
       </div>

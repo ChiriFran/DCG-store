@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Newsletter.css";
-import { db } from "../firebase/config"; // Importa la configuración de Firebase
-import { collection, addDoc } from "firebase/firestore"; // Importa las funciones necesarias de Firestore
+import { db } from "../firebase/config";
+import { collection, addDoc } from "firebase/firestore";
 
 function Newsletter() {
   const [email, setEmail] = useState("");
@@ -25,25 +25,19 @@ function Newsletter() {
     }
 
     try {
-      // Agrega el email a la colección "newsletter" en Firestore
       await addDoc(collection(db, "newsletter"), {
         email: email,
         timestamp: new Date(),
       });
 
-      // Limpiar los campos del formulario después de enviar
       setEmail("");
-
-      // Mostrar mensaje de éxito
       setSuccessMessage("¡Ya estas suscrito a nuestro Newsletter!");
 
-      // Ocultar el mensaje después de 5 segundos
       setTimeout(() => {
         setSuccessMessage("");
       }, 5000);
     } catch (error) {
       console.error("Error al agregar el documento: ", error);
-      // Puedes agregar un mensaje de error si lo deseas
       alert("Hubo un error al suscribirse. Por favor, inténtalo de nuevo.");
     } finally {
       setIsSubmitting(false);
@@ -60,7 +54,7 @@ function Newsletter() {
       <form className="newsletterForm" onSubmit={handleSubmit}>
         <div className="formGroup">
           <input
-            placeholder="email@example.com"  
+            placeholder="email@example.com"
             type="email"
             id="email"
             value={email}
@@ -72,7 +66,7 @@ function Newsletter() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={isSubmitting ? "buttonSubmitting" : ""}
+          className={`submitButton ${isSubmitting ? "submitting" : ""}`}
         >
           {isSubmitting ? "Enviando..." : "Suscribirse"}
         </button>
