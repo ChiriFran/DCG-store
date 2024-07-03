@@ -9,6 +9,7 @@ import SignUp from "./components/SingUp.jsx";
 import Carrito from "./components/Carrito.jsx";
 import Checkout from "./components/Checkout.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import MusicList from "./components/MusicList.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 path="/Productos/:category"
                 element={<ItemListContainer />}
               />
+              <Route path="/music" element={<MusicList />} />
               <Route
                 path="/ProductoDetalles/:id"
                 element={<ItemDetailContainer />}
