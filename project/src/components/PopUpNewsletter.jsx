@@ -11,9 +11,14 @@ const PopUpNewsletter = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const animation = useSpring({
+  const overlayAnimation = useSpring({
     opacity: isOpen ? 1 : 0,
-    transform: isOpen ? `translateY(0)` : `translateY(-100%)`,
+    pointerEvents: isOpen ? "auto" : "none",
+  });
+
+  const contentAnimation = useSpring({
+    opacity: isOpen ? 1 : 0,
+    transform: isOpen ? `translateY(0)` : `translateY(-20px)`,
   });
 
   useEffect(() => {
@@ -56,7 +61,7 @@ const PopUpNewsletter = () => {
       setIsLoading(true);
 
       await addDoc(collection(db, "newsletter"), {
-        email: email,
+        email,
         timestamp: new Date(),
       });
 
@@ -88,11 +93,11 @@ const PopUpNewsletter = () => {
 
   return (
     <animated.div
-      style={animation}
+      style={overlayAnimation}
       className="popup-overlay"
       onClick={handleOverlayClick}
     >
-      <div className="popup-content">
+      <animated.div style={contentAnimation} className="popup-content">
         <button className="close-button" onClick={handleClose}>
           X
         </button>
@@ -130,7 +135,7 @@ const PopUpNewsletter = () => {
         <button className="no-show-button" onClick={handlePermanentClose}>
           No mostrar
         </button>
-      </div>
+      </animated.div>
     </animated.div>
   );
 };

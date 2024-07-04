@@ -9,6 +9,9 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .popup-content {
@@ -21,6 +24,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .close-button {
@@ -137,29 +141,6 @@
   100% {
     opacity: 0;
   }
-}
-
-/* Animaciones */
-.popup-enter {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.popup-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
-}
-
-.popup-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.popup-exit-active {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 300ms, transform 300ms;
 }
 
 .no-show-button {
