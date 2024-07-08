@@ -13,7 +13,7 @@
   overflow: hidden; /* Asegura que el contenido no se desborde */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
 }
 
 .musicIframe {
