@@ -14,11 +14,14 @@ function MusicList({ searchTerm, category, urlCategory }) {
 
   if (isLoading) return <Loader />;
 
+  // Sort discos by order in descending order
+  const sortedDiscos = discos.sort((a, b) => b.order - a.order);
+
   return (
     <>
       <h2 className="musicCategoryTitle">Music</h2>
       <div className="musicContenedor">
-        {discos.map((disc) => (
+        {sortedDiscos.map((disc) => (
           <MusicItem disco={disc} key={disc.id} />
         ))}
       </div>

@@ -1,12 +1,63 @@
-
-.musicItem{
-  width: auto;
-  height: 420px;
-  background-color: rgba(128, 128, 128, 0.472);
+.musicItemContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-iframe {
+.musicItem {
+  width: 100%;
+  max-width: 800px; /* Limita el ancho máximo del contenedor */
+  height: 560px;
+  background-color: #303030;
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.musicIframe {
   border: none;
   width: 100%;
-  height: 100%;
+  height: calc(
+    100% - 40px
+  ); /* Ajusta el tamaño para dejar espacio para el enlace */
 }
+
+.BuyBtn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  color: #f4f4f4;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+
+@media (min-width: 1301px) and (max-width: 1700px) {
+  .musicItem {
+  height: 480px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1300px) {
+  .musicItem {
+  height: 520px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .musicItem {
+
+  height: 600px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .musicItem {
+
+  height: 520px;
+  }
+}
+

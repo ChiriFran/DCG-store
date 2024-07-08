@@ -1,12 +1,24 @@
+import React from "react";
 import "../styles/MusicItem.css";
 
 const MusicItem = ({ disco }) => {
   return (
     <div className="musicItemContainer">
       <div className="musicItem">
-        <iframe src={disco.urlSong} seamless>
-          <a href={disco.urlToBuy}>{disco.author}</a>
-        </iframe>
+        <iframe
+          className="musicIframe"
+          title="Reproductor de música"
+          src={disco.urlSong}
+          seamless
+        ></iframe>
+        <a
+          className="BuyBtn"
+          href={disco.urlToBuy}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Buy now for ${disco.price}
+        </a>
       </div>
     </div>
   );
