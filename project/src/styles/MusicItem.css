@@ -35,11 +35,24 @@
   text-decoration: none;
 }
 
-.bandcampBackground{
+.bandcampBackground:nth-last-child(1){
   position: absolute;
   top: -120%;
   transform: rotate(-20deg);
   left: 0.5rem;
+  font-weight: 500;
+  color: #f4f4f41b;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.bandcampBackground:nth-last-child(2){
+  position: absolute;
+  top: -120%;
+  transform: rotate(-20deg);
+  right: 0.5rem;
   font-weight: 500;
   color: #f4f4f41b;
   display: flex;

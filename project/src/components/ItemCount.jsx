@@ -5,11 +5,12 @@ const ItemCount = ( {cantidad, handleSumar, handleRestar, handleAgregar} ) => {
   return (
     <div>
       <div className="itemCount">
+        <span className='cantidadSpan'>cantidad</span>
         <button className='btnContador' onClick={handleRestar}>-</button>
         <p className='cantidad'>{cantidad}</p>
         <button className='btnContador' onClick={handleSumar}>+</button>
       </div>
-      <button className="agregar-al-carrito" onClick={handleAgregar}>Agregar al carrito</button>
+      <button className="agregar-al-carrito" onClick={handleAgregar}>Add to cart</button>
     </div>
   );
 };

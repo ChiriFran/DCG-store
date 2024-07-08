@@ -37,13 +37,14 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div className="itemDetailContainer">
-      <img className="itemDetailImg" src={item.image} alt={item.title} />
+      <img className="itemDetailImg" src={item.imageDetail} alt={item.title} />
       <div className="itemDetail">
-        <p className="itemDetailCategory">{item.category}</p>
         <h3 className="itemDetailTitle">{item.title}</h3>
-        <h3 className="itemId">SKU: #{item.id}</h3>
-        <p className="itemDetailDescription">{item.description}</p>
-        <p className="itemDetailPrice">Price: {item.price}</p>
+        <p className="itemDetailPrice">$ {item.price}</p>
+
+        {/*         <h3 className="itemId">SKU: #{item.id}</h3>
+        <p className="itemDetailCategory">{item.category}</p> */}
+
         <div className="botonesComprarEliminar">
           <ItemCount
             cantidad={cantidad}
@@ -55,12 +56,14 @@ const ItemDetail = ({ item }) => {
             className="eliminarDelCarrito"
             onClick={handleEliminarDelCarrito}
           >
-            Eliminar
+            Remove
           </button>
         </div>
         <p className="cantidadEnCarrito">
-          Carrito: {cantidadEnCarrito} unidad/es añadidas.
+          Cart: {cantidadEnCarrito} unit/s added.
         </p>
+
+        <p className="itemDetailDescription">{item.description}</p>
       </div>
     </div>
   );

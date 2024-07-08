@@ -1,23 +1,36 @@
 .itemCount {
+  position: relative;
   display: flex;
   width: 100%;
   flex-flow: row;
   align-items: center;
-  margin: 1rem 0;
+  padding-bottom: 1rem; 
+  margin: 0.5rem 0;
+}
+
+.cantidadSpan{
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(1, 1, 1, 0.407);
 }
 
 .cantidad {
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-size: 0.5rem;
+  color: #f1f2f670;
+  border: 1px solid rgba(128, 128, 128, 0.264);
+  padding: 1.2rem 1rem;
+  
 }
 
 .btnContador {
   border: none;
   margin: 0.5rem 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.88);
-  color: #f1f2f6;
-  border-radius: 0.5rem;
+  color: #f1f2f670;
+  border: 1px solid rgba(128, 128, 128, 0.264);
+  padding: 1rem 1rem;
 }
 
 .btnContador:hover {
@@ -28,10 +41,10 @@
 .agregar-al-carrito {
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.88);
   color: #f1f2f6;
   font-size: clamp(1rem, 2vw, 1.2rem);
+  border: 2px solid rgb(255, 255, 255);
 }
 
 .agregar-al-carrito:hover {
