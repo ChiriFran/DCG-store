@@ -1,0 +1,31 @@
+.linksContainer {
+  display: flex;
+  width: 100%;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin: 6rem  0;
+}
+
+.links {
+  display: flex;
+  width: 70%;
+  flex-flow: row;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .linksContainer {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2%;
+    margin-top: 5rem;
+  }
+
+  .newsletterContainer {
+    flex-flow: row;
+  }
+}

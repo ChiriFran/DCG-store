@@ -41,14 +41,6 @@ const ItemListContainer = () => {
           urlCategory={urlCategory}
         />
       </div>
-
-      <div className="footerNavlinksContainer">
-        <div className="footerNavlinks">
-          <FooterNavLinks />
-          <Newsletter />
-          <Contacto />
-        </div>
-      </div>
     </>
   );
 };
