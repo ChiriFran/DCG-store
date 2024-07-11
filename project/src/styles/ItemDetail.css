@@ -9,11 +9,11 @@
 
 .itemDetail {
   width: 50%;
+  margin-top: 5rem;
 }
 
 .itemDetailImg {
   width: 600px;
-  margin: 1rem 1rem;
   margin-left: auto;
 }
 
