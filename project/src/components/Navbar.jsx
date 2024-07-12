@@ -199,11 +199,6 @@ const Navbar = () => {
                   Log in
                 </Link>
               </li>
-              <li>
-                <Link to="/SingUp" className="link">
-                  Create account
-                </Link>
-              </li>
             </>
           )}
         </ul>
