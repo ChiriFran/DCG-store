@@ -15,7 +15,7 @@ const Carrito = () => {
     <div className="carritoContainer">
       <div className="carritoCard">
         <h1 className="carritoTitle">
-          {carrito.length > 0 ? "Carrito" : "Carrito vacío"}
+          {carrito.length > 0 ? "Cart" : "Oops, you don't have any items in your cart! Here below are some of our products"}
         </h1>
         {carrito.length > 0 ? (
           <>
