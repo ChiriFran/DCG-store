@@ -12,6 +12,7 @@ import Checkout from "./components/Checkout.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import MusicList from "./components/MusicList.jsx";
 import ContactFooter from "./components/ContactFooter.jsx";
+import Footer from "./components/Footer.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           </Routes>
         </ScrollToTop>
         <ContactFooter />
+        <Footer />
       </BrowserRouter>
     </CartProvider>
   );

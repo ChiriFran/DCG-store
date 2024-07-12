@@ -70,31 +70,32 @@
 .precioTotal {
   text-align: center;
   font-size: 1rem;
+  position: relative;
 }
 
-.mobileCantidad{
+.deleteSvg{
+  width: 28px;
+  height: 28px;
+}
+
+.precioTotal{
+  display: flex;
+  width: 100%;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mobileCantidad {
   display: none;
 }
 
 .precioFinal {
   margin: 1rem 0;
-  padding: 1rem 0;
-  text-align: center;
+  padding: 1rem 1.5rem;
+  text-align: end;
   border-top: 3px solid rgba(128, 128, 128, 0.249);
-}
-
-.vaciarCarrito {
-  border: none;
-  background-color: #f1f2f66f;
-  padding: 0.6rem 2rem;
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vaciarCarrito svg {
-  margin-left: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .buttonContainer {
@@ -111,12 +112,28 @@ button {
 
 .finalizarCompra {
   text-decoration: none;
-  color: rgb(224, 224, 224);
-  background-color: rgb(9, 9, 9);
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1.4rem;
+  color: rgb(0, 0, 0);
+  background-color: rgba(224, 224, 224, 0.442);
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+}
+
+.vaciarCarrito {
+  border: none;
+  background-color: #f1f2f600;
+  color: rgba(255, 255, 255, 0.872);
+  padding: 0.6rem 2rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.vaciarCarrito svg {
+  margin-left: 0.5rem;
 }
 
 @media screen and (max-width: 700px) {
@@ -146,7 +163,7 @@ button {
     margin: 0.5rem 0;
   }
 
-  .mobileCantidad{
+  .mobileCantidad {
     display: inline;
     color: #d3d3d378;
   }
