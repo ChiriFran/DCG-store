@@ -24,7 +24,7 @@
 
 .carritoTitle {
   color: #f1f2f676;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -32,7 +32,7 @@
 .carritoHeader,
 .carritoItem {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   align-items: center;
   margin-bottom: 1rem;
   padding: 1rem 0; /* Añade relleno vertical */
@@ -175,6 +175,10 @@ button {
 
   .precioTotal {
     order: 3;
+  }
+
+  .precioFinal{
+    text-align: center;
   }
 
   .productImage {
