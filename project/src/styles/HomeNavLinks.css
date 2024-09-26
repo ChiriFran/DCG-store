@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .homeNavLinksContainer ul {
   margin: 0.3rem 0;
 }
@@ -13,8 +14,16 @@
   color: #f4f4f4;
   text-decoration: none;
   padding-bottom: 0.1rem;
+  padding: 0.5rem 0;
 }
 
 .homeNavLink:hover {
   text-decoration: underline;
+}
+
+
+@media screen and (max-width: 700px) {
+  .homeNavLinksContainer {
+    width: 80%;
+  }
 }

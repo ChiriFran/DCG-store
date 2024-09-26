@@ -1,142 +1,130 @@
 import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "@react-spring/web";
 import "../styles/PopUpNewsletter.css";
 import { db } from "../firebase/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 
-const PopUpNewsletter = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const PopUpNewsletter = ({ isOpen, onClose }) => {
+  const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(true);
-  const [showMessage, setShowMessage] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const overlayAnimation = useSpring({
-    opacity: isOpen ? 1 : 0,
-    pointerEvents: isOpen ? "auto" : "none",
-  });
-
-  const contentAnimation = useSpring({
-    opacity: isOpen ? 1 : 0,
-    transform: isOpen ? `translateY(0)` : `translateY(-20px)`,
-  });
-
+  // Mostrar modal con animación y deshabilitar scroll
   useEffect(() => {
-    const isSubscribed = localStorage.getItem("newsletterSubscribed");
-    const isClosedPermanently = localStorage.getItem(
-      "newsletterClosedPermanently"
-    );
-    if (!isSubscribed && !isClosedPermanently) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-        document.body.style.overflow = "hidden";
-      }, 5000);
-
-      return () => {
-        clearTimeout(timer);
-        document.body.style.overflow = "auto";
-      };
+    if (isOpen) {
+      setTimeout(() => {
+        setIsVisible(true); // Mostrar el modal después de un pequeño retardo para la animación
+      }, 10);
+      document.body.style.overflow = "hidden"; // Deshabilitar el scroll
+      window.scrollTo(0, 0); // Forzar el scroll hacia arriba
+    } else {
+      setIsVisible(false);
     }
-  }, []);
-
-  const handleClose = () => {
-    setIsOpen(false);
-    document.body.style.overflow = "auto";
-  };
-
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      handleClose();
-    }
-  };
+    return () => {
+      document.body.style.overflow = "auto"; // Restaurar el scroll al cerrar el modal
+    };
+  }, [isOpen]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateEmail(email)) {
-      setIsValidEmail(false);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail|hotmail|yahoo)\.com$/;
+
+    if (!emailPattern.test(email)) {
+      setErrorMessage(
+        "Por favor, ingresa un correo electrónico válido que termine en @gmail.com, @hotmail.com, o @yahoo.com"
+      );
+      setIsSubmitting(false);
       return;
     }
 
     try {
-      setIsLoading(true);
+      // Verificar si el correo ya está registrado
+      const emailQuery = query(collection(db, "newsletter"), where("email", "==", email));
+      const querySnapshot = await getDocs(emailQuery);
 
+      if (!querySnapshot.empty) {
+        setErrorMessage("Este correo ya está registrado en nuestro newsletter.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Añadir el correo a la base de datos
       await addDoc(collection(db, "newsletter"), {
-        email,
+        email: email,
         timestamp: new Date(),
       });
 
       setEmail("");
-      setIsValidEmail(true);
-      setShowMessage(true);
-      localStorage.setItem("newsletterSubscribed", "true");
+      setSuccessMessage("¡Ya estás suscrito a nuestro Newsletter!");
+
+      // Cerrar el modal después de 3 segundos
       setTimeout(() => {
-        setShowMessage(false);
-        handleClose();
+        setSuccessMessage("");
+        handleClose(); // Cerrar el modal automáticamente
       }, 3000);
     } catch (error) {
       console.error("Error al agregar el documento: ", error);
       alert("Hubo un error al suscribirse. Por favor, inténtalo de nuevo.");
     } finally {
-      setIsLoading(false);
+      setIsSubmitting(false);
     }
   };
 
-  const validateEmail = (email) => {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(String(email).toLowerCase());
+  const handleClose = () => {
+    setIsVisible(false); // Ocultar modal
+    setTimeout(() => {
+      onClose(); // Llamar al cierre del modal después de la animación
+    }, 300); // Asegurarse de que la animación termine antes de cerrar
   };
 
-  const handlePermanentClose = () => {
-    localStorage.setItem("newsletterClosedPermanently", "true");
-    handleClose();
-  };
+  if (!isOpen) return null;
 
   return (
-    <animated.div
-      style={overlayAnimation}
-      className="popup-overlay"
-      onClick={handleOverlayClick}
+    <div
+      className={`popupOverlay ${isVisible ? "fadeIn" : "fadeOut"}`}
+      onClick={handleClose}
     >
-      <animated.div style={contentAnimation} className="popup-content">
-        <button className="close-button" onClick={handleClose}>
+      <dialog
+        className={`popupNewsletter ${isVisible ? "open" : ""}`}
+        open
+        onClick={(e) => e.stopPropagation()} // Evitar cerrar el modal al hacer click dentro
+      >
+        <button className="modalCloseButton" onClick={handleClose}>
           X
         </button>
-        <h2>Forma parte de esta gran familia</h2>
-        <p>
-          Obtene un codigo de descuento de bienvenida y enterate de todas las
-          novedades
-        </p>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Ingresa tu email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              setIsValidEmail(true);
-            }}
-            className={!isValidEmail ? "invalid" : ""}
-            required
-          />
-          {!isValidEmail && (
-            <p className="error-message">Por favor ingresa un email válido.</p>
-          )}
-          <button
-            className={`subscribe-button ${isLoading ? "loading" : ""}`}
-            type="submit"
-            disabled={isLoading}
-          >
-            {isLoading ? "Cargando..." : "Suscribirse"}
-          </button>
-        </form>
-        {showMessage && (
-          <p className="success-message">¡Gracias por suscribirte!</p>
-        )}
-        <button className="no-show-button" onClick={handlePermanentClose}>
-          No mostrar
-        </button>
-      </animated.div>
-    </animated.div>
+        <div className="modalNewsletterContainer">
+          <h3 className="modalNewsletterTitle">Forma parte de nuestra comunidad</h3>
+          <p className="modalNewsletterText">
+            Recibe promociones y descuentos exclusivos.
+          </p>
+          <form className="modalNewsletterForm" onSubmit={handleSubmit}>
+            <div className="modalFormGroup">
+              <input
+                placeholder="email@example.com"
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              {errorMessage && <p className="modalErrorMessage">{errorMessage}</p>}
+            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`modalSubmitButton ${isSubmitting ? "modalSubmitting" : ""}`}
+            >
+              {isSubmitting ? "Enviando..." : "Suscribirse"}
+            </button>
+            {successMessage && <p className="modalSuccessMessage">{successMessage}</p>}
+          </form>
+        </div>
+      </dialog>
+    </div>
   );
 };
 

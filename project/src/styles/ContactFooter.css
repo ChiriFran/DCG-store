@@ -4,7 +4,7 @@
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  margin: 6rem  0;
+  margin: 6rem 0;
 }
 
 .links {
@@ -25,7 +25,11 @@
     margin-top: 5rem;
   }
 
-  .newsletterContainer {
-    flex-flow: row;
+  .links {
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
   }
 }

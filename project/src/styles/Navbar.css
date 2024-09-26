@@ -1,9 +1,10 @@
 .nav {
   display: flex;
   width: 100%;
-  height: 8vh;
+  height: 10vh;
   flex-flow: row;
-  align-items: center;
+  align-items: start;
+  padding: 0.5rem 1rem;
   justify-content: space-between;
   z-index: 10000;
   background-color: #000;
@@ -135,8 +136,6 @@
 
 .carritoContainerDesktop {
   border: 2px solid #f4f4f4;
-  border-radius: 0.2rem;
-  margin-right: 0.5rem;
 }
 
 .userMenuDesktop li {

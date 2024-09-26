@@ -105,6 +105,7 @@
 @media screen and (max-width: 700px) {
   .newsletterContainer {
     margin: 3rem 0;
+    flex-flow: column;
   }
 
   .newsletterText {
@@ -112,4 +113,9 @@
     font-weight: 200;
     padding: 0 8% 2rem;
   }
+
+  .newsletterForm {
+    width: 100%;
+  }
+
 }

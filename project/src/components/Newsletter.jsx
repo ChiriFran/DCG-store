@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Newsletter.css";
 import { db } from "../firebase/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 
 function Newsletter() {
   const [email, setEmail] = useState("");
@@ -25,13 +25,24 @@ function Newsletter() {
     }
 
     try {
+      // Verificar si el correo ya existe en la base de datos
+      const emailQuery = query(collection(db, "newsletter"), where("email", "==", email));
+      const querySnapshot = await getDocs(emailQuery);
+
+      if (!querySnapshot.empty) {
+        setErrorMessage("Este correo ya está registrado en nuestro newsletter.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Si no está registrado, lo añadimos
       await addDoc(collection(db, "newsletter"), {
         email: email,
         timestamp: new Date(),
       });
 
       setEmail("");
-      setSuccessMessage("¡Ya estas suscrito a nuestro Newsletter!");
+      setSuccessMessage("¡Ya estás suscrito a nuestro Newsletter!");
 
       setTimeout(() => {
         setSuccessMessage("");
@@ -48,8 +59,7 @@ function Newsletter() {
     <div className="newsletterContainer">
       <h3 className="newsletterTitle">Forma parte de nuestra comunidad</h3>
       <p className="newsletterText">
-        Forma parte de nuestra comunidad y recibe promociones y descuentos
-        exclusivos.
+        Recibe promociones y descuentos exclusivos.
       </p>
       <form className="newsletterForm" onSubmit={handleSubmit}>
         <div className="formGroup">
