@@ -4,8 +4,6 @@
   width: 100%;
   flex-flow: row;
   align-items: center;
-  padding-bottom: 1rem; 
-  margin: 0.5rem 0;
 }
 
 .cantidadSpan{
@@ -19,18 +17,26 @@
   font-size: 0.5rem;
   color: #f1f2f670;
   border: 1px solid rgba(128, 128, 128, 0.264);
-  padding: 1.2rem 1rem;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.5rem;
   
+}
+
+.cantidadSpan{
+  color: rgba(225, 225, 225, 0.5);
+  font-size: 0.8rem;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .btnContador {
   border: none;
-  margin: 0.5rem 0.5rem;
-  font-size: 1.2rem;
+  margin: 2rem 0;
+  font-size: 1rem;
   background-color: rgba(0, 0, 0, 0.88);
   color: #f1f2f670;
   border: 1px solid rgba(128, 128, 128, 0.264);
-  padding: 1rem 1rem;
+  padding: 0.5rem 1.2rem;
 }
 
 .btnContador:hover {

@@ -5,7 +5,7 @@ const ItemCount = ( {cantidad, handleSumar, handleRestar, handleAgregar} ) => {
   return (
     <div>
       <div className="itemCount">
-        <span className='cantidadSpan'>cantidad</span>
+        <span className='cantidadSpan'>Quantity</span>
         <button className='btnContador' onClick={handleRestar}>-</button>
         <p className='cantidad'>{cantidad}</p>
         <button className='btnContador' onClick={handleSumar}>+</button>
