@@ -45,7 +45,7 @@
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: transparent;
   z-index: 10000;
   padding: 0.5rem 0;
   position: fixed;

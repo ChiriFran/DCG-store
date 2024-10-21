@@ -1,6 +1,6 @@
 .homeVideoContainer {
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 95vh;
   position: relative;
   display: flex;
   flex-flow: column;
@@ -28,9 +28,8 @@
   --enhanced-glow-color: rgb(249, 243, 155);
   --btn-color: rgb(228, 228, 228);
   border: 0.25em solid var(--glow-color);
-  padding: 0.2rem 2rem;
   color: var(--glow-color);
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   background-color: var(--btn-color);
   border-radius: 0.2rem;
@@ -80,7 +79,7 @@
 
 .homeLink span {
   color: #000;
-  letter-spacing: 3px;
+  padding: 0.2rem 0.2rem;
 }
 
 .videoControlsContainer {
@@ -98,7 +97,7 @@
   z-index: 1;
   width: 150px;
   height: 5px;
-  background-color: rgba(0, 0, 0, 0.639);
+  background-color:rgba(255, 255, 255, 0.539);
   -webkit-appearance: none;
   appearance: none;
 }
@@ -108,7 +107,7 @@
   appearance: none;
   width: 15px;
   height: 15px;
-  background: rgba(14, 13, 13, 0.757);
+  background: rgba(255, 255, 255, 0.539);
   cursor: pointer;
 }
 
@@ -142,7 +141,6 @@
 /* Animaciones */
 .typedText {
   display: inline-block;
-  padding: 0 1rem;
   max-width: 150px;
 }
 .typedTextContent {
