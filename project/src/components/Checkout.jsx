@@ -62,7 +62,24 @@ function Checkout() {
             {...register("telefono")}
             required
           />
-
+          <input
+            type="text"
+            placeholder="Dirección: "
+            {...register("direccion")}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Ciudad: "
+            {...register("ciudad")}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Código Postal: "
+            {...register("codigoPostal")}
+            required
+          />
           <button className="checkoutEnviar" type="submit">
             Comprar
           </button>
