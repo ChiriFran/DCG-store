@@ -1,8 +1,9 @@
 .itemDetailContainer {
   display: grid;
   width: 100%;
-  grid-template-columns: 60% 1fr;
+  grid-template-columns: 55% 1fr;
   padding: 1rem 1rem;
+  gap: 2rem;
   color: #f4f4f4;
   border-top: 1px solid rgba(128, 128, 128, 0.3);
 }
@@ -40,7 +41,137 @@
   margin: 0.5rem 0;
 }
 
-.itemDetailCategory {
+.itemmDetailDescriptionList {
+  padding: 1rem 1rem;
+}
+
+.itemmDetailDescriptionList ul li {
+  font-size: 0.8rem;
+  color: rgb(136, 135, 135);
+  padding: 0.1rem 0;
+  line-height: 1.4;
+  list-style-type: decimal-leading-zero;
+}
+
+.sizeChartContainer {
+  margin: 1rem 0;
+}
+
+.sizeChartContainer ul li {
+  list-style-type: square;
+}
+
+
+.sizeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 2px;
+  margin-top: 2rem;
+}
+
+.sizeGrid>div {
+  color: rgb(136, 135, 135);
+  border: 1px solid rgba(136, 135, 135, 0.48);
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+
+.div2 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.div3 {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.div4 {
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.div5 {
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.div6 {
+  grid-column-start: 1;
+  grid-row-start: 6;
+}
+
+.div7 {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.div8 {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.div9 {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.div10 {
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+
+.div11 {
+  grid-column-start: 2;
+  grid-row-start: 5;
+}
+
+.div12 {
+  grid-column-start: 2;
+  grid-row-start: 6;
+}
+
+.div13 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.div14 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.div15 {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+
+.div16 {
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+
+.div17 {
+  grid-column-start: 3;
+  grid-row-start: 5;
+}
+
+.careIntructions p{
+  color: rgb(136, 135, 135);
+}
+
+.careIntructions ul li{
+  list-style-type: square;
+}
+
+.itemDetailCategory{
+  margin: 1rem 0;
+}
+
+.itemDetailCategory p{
+  font-size: 1rem;
   color: rgb(136, 135, 135);
 }
 

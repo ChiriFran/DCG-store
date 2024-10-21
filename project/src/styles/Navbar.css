@@ -28,6 +28,7 @@
   flex-flow: row;
   align-items: center;
   justify-content: center;
+  font-size: 0.8rem ;
 }
 
 .link svg {
@@ -69,6 +70,7 @@
 
 .userMenuDesktop li {
   padding: 0 1rem;
+  font-size: 0.8rem;
 }
 
 .navMenuDesktop {
