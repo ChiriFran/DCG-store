@@ -50,8 +50,10 @@ const Carrito = () => {
             <div className="buttonContainer">
               <div className="detallesCompra">
                 <p className="detalleCompraText">Intrucciones especiales:</p>
-                <textarea className="detallesInput" resize="none"/>
-                <p className="carritoFaq">FAQ / SHIPPING</p>
+                <textarea className="detallesInput" resize="none" />
+                <Link to="/Faq" className="homeNavLink">
+                  FAQ / Shipping
+                </Link>
               </div>
               <div className="finalizarCompraContainer">
                 <Link className="finalizarCompra" to="/Checkout">
