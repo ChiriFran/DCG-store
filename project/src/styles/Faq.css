@@ -23,3 +23,19 @@
     letter-spacing: 1px;
     margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 700px) {
+    .faqContainer {
+        padding: 55% 0% 5% 0%;
+    }
+
+    .faqTitle {
+        width: 100%;
+    }
+
+    .faqTexts {
+        width: 90%;
+        line-height: 2;    
+    }
+
+}
