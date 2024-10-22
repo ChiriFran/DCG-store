@@ -260,10 +260,35 @@
 
 
 @media screen and (max-width: 700px) {
+
   .itemDetailContainer {
-    width: 100%;
+    display: flex;
     flex-flow: column;
-    padding: 3rem 1rem;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    padding: 0 0;
+    color: #f4f4f4;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  
+  }
+  
+  .itemDetail {
+    width: 100%;
+    padding: 1rem 1rem;
+    margin-top: 0;
+  }
+  
+  .itemDetailImgContainer{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+  
+  .itemDetailImg {
+    width: 100%;
+    padding: 2rem 2rem;
   }
 
   .botonesComprarEliminar {

@@ -9,7 +9,6 @@
 
 @media screen and (max-width: 700px) {
     .detailContainer{
-        height: 100vh;
         flex-flow: column;
         justify-content: flex-start;
         padding-left: 0%;
