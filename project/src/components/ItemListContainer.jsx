@@ -5,9 +5,6 @@ import ItemList from "./ItemList";
 import MusicList from "./MusicList";
 import Loader from "./Loader";
 import SearchFilters from "./SearchFilters";
-import FooterNavLinks from "./FooterNavLinks";
-import Contacto from "./Contacto";
-import Newsletter from "./Newsletter";
 import useProductos from "../helpers/useProductos";
 
 import "../styles/ItemListContainer.css";

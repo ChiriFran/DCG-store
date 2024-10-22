@@ -19,7 +19,6 @@ function MusicList({ searchTerm, category, urlCategory }) {
 
   return (
     <>
-      <h2 className="musicCategoryTitle">Music</h2>
       <div className="musicContenedor">
         {sortedDiscos.map((disc) => (
           <MusicItem disco={disc} key={disc.id} />

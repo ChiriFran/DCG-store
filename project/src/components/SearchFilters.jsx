@@ -20,10 +20,10 @@ const SearchFilters = ({ onSearch }) => {
       />
       <select className="categorySelect" value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="">Todas las categorías</option>
-        <option value="Men's Clothing">Men's Clothing</option>
-        <option value="Women's Clothing">Women's Clothing</option>
-        <option value="Jewelery">Jewelery</option>
-        <option value="Electronics">Electronics</option>
+        <option value="Remeras">Remeras</option>
+        <option value="Buzos">Buzos</option>
+        <option value="Gorras">Gorras</option>
+        <option value="Bolsas">Bolsas</option>
       </select>
       <button className="btnBuscar" onClick={handleSearch}>Buscar</button>
     </div>

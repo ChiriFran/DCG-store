@@ -130,43 +130,52 @@ const Navbar = () => {
           <ul className="navMenu">
             <li>
               <Link to="/Productos" className="link" onClick={toggleMenu}>
-                Tienda
+                Shop
               </Link>
             </li>
             <li>
               <Link
-                to="/Productos/men's clothing"
+                to="/Music"
                 className="link"
                 onClick={toggleMenu}
               >
-                Men's Clothing
+                Music
               </Link>
             </li>
             <li>
               <Link
-                to="/Productos/women's clothing"
+                to="/Eventos"
                 className="link"
                 onClick={toggleMenu}
               >
-                Women's Clothing
+                Events
               </Link>
             </li>
             <li>
               <Link
-                to="/Productos/jewelery"
+                to="/Blogs"
                 className="link"
                 onClick={toggleMenu}
               >
-                Jewelery
+                Blogs
               </Link>
             </li>
             <li>
               <Link
-                to="/Productos/electronics"
+                to="/AboutUs"
                 className="link"
                 onClick={toggleMenu}
               >
-                Electronics
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/Faq"
+                className="link"
+                onClick={toggleMenu}
+              >
+                FAQ
               </Link>
             </li>
           </ul>
@@ -260,7 +269,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/music" className="link">
+            <Link to="/Music" className="link">
               Music
             </Link>
           </li>
