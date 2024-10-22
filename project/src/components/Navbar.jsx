@@ -265,17 +265,17 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/EventosBlogs" className="link">
+            <Link to="/Eventos" className="link">
               Events
             </Link>
           </li>
           <li>
-            <Link to="/EventosBlogs" className="link">
+            <Link to="/Blogs" className="link">
               Blogs
             </Link>
           </li>
           <li>
-            <Link to="/EventosBlogs" className="link">
+            <Link to="/AboutUs" className="link">
               About us
             </Link>
           </li>
