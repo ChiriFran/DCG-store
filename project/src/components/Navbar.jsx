@@ -279,6 +279,11 @@ const Navbar = () => {
               About us
             </Link>
           </li>
+          <li>
+            <Link to="/Faq" className="link">
+              FAQ
+            </Link>
+          </li>
         </ul>
       </div>
     </>

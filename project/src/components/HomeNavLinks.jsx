@@ -41,6 +41,11 @@ function HomeNavLinks() {
           About Us
         </Link>
       </ul>
+      <ul>
+        <Link to="/Faq" className="homeNavLink">
+          FAQ
+        </Link>
+      </ul>
     </div>
   );
 }

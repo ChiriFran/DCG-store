@@ -1,27 +1,25 @@
-.acercaContainer{
+.faqContainer{
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.232);
     padding: 15% 10% 5% 10%;
-    color: white;
+    width: 100%;
+    color: #f4f4f4;
 }
 
-.acercaTitle{
+.faqTitle{
     margin: 0 0 2rem 0;
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.301);
     width: 80%;
     text-align: center;
-    
 }
 
-.acercaTexts{
+.faqTexts{
     width: 50%;
     line-height: 1.8;
     font-size: 0.8rem;
     letter-spacing: 1px;
     margin-bottom: 1rem;
-    
 }

@@ -51,6 +51,7 @@ const Carrito = () => {
               <div className="detallesCompra">
                 <p className="detalleCompraText">Intrucciones especiales:</p>
                 <textarea className="detallesInput" resize="none"/>
+                <p className="carritoFaq">FAQ / SHIPPING</p>
               </div>
               <div className="finalizarCompraContainer">
                 <Link className="finalizarCompra" to="/Checkout">

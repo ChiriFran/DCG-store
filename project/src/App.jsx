@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar.jsx";
 import Eventos from "./components/Eventos.jsx";
 import Blogs from "./components/Blogs.jsx";
 import AboutUs from "./components/AboutUs.jsx";
+import Faq from "./components/Faq.jsx";
 import LogIn from "./components/LogIn.jsx";
 import SignUp from "./components/SingUp.jsx";
 import Carrito from "./components/Carrito.jsx";
@@ -36,6 +37,7 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/Faq" element={<Faq />} />
             <Route path="/Eventos" element={<Eventos />} />
             <Route path="/Blogs" element={<Blogs />} />
             <Route path="*" element={<p>Not Found</p>} />
