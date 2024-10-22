@@ -5,13 +5,9 @@ import "../styles/HomeNavLinks.css";
 function HomeNavLinks() {
   return (
     <div className="homeNavLinksContainer">
+
       <ul>
-        <Link to="/" className="homeNavLink">
-          Inicio
-        </Link>
-      </ul>
-      <ul>
-        <Link to="/Productos/gorras"  className="homeNavLink">
+        <Link to="/Productos/gorras" className="homeNavLink">
           Gorras
         </Link>
       </ul>
@@ -31,8 +27,18 @@ function HomeNavLinks() {
         </Link>
       </ul>
       <ul>
-        <Link to="/EventosBlogs" className="homeNavLink">
-          Events and Blogs
+        <Link to="/Eventos" className="homeNavLink">
+          Events
+        </Link>
+      </ul>
+      <ul>
+        <Link to="/Blogs" className="homeNavLink">
+          Blogs
+        </Link>
+      </ul>
+      <ul>
+        <Link to="/AboutUs" className="homeNavLink">
+          About Us
         </Link>
       </ul>
     </div>
