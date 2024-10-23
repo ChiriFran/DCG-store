@@ -51,7 +51,7 @@ const Carrito = () => {
               <div className="detallesCompra">
                 <p className="detalleCompraText">Intrucciones especiales:</p>
                 <textarea className="detallesInput" resize="none" />
-                <Link to="/Faq" className="homeNavLink">
+                <Link to="/Faq" className="carritoFaq">
                   FAQ / Shipping
                 </Link>
               </div>

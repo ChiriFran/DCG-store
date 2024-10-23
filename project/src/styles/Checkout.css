@@ -77,6 +77,12 @@
 }
 
 @media (max-width: 700px) {
+
+  .checkoutContainer{
+    width: 90%;
+    padding: 2rem 2rem;
+  }
+  
   .checkoutFormulario {
     max-width: 100%;
   }
