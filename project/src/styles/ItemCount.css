@@ -6,6 +6,7 @@
   align-items: center;
 }
 
+
 .cantidadSpan{
   position: absolute;
   top: 0;
@@ -56,4 +57,19 @@
 .agregar-al-carrito:hover {
   background-color: rgba(1, 1, 1, 0.607);
   color: #f1f2f6;
+}
+
+@media screen and (max-width: 700px) {
+  .btnContador{
+    order: 1;
+  }
+
+  .cantidad{
+    order: 2;
+  }
+
+  .btnContador:last-of-type{
+    order: 3;
+  }
+
 }
