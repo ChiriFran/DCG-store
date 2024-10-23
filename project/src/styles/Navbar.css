@@ -28,7 +28,7 @@
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem ;
+  font-size: 0.8rem;
 }
 
 .link svg {
@@ -145,6 +145,15 @@
 }
 
 @media screen and (max-width: 700px) {
+
+  .userMenuDesktop {
+    display: none;
+  }
+
+  .carritoContainerDesktop{
+    display: none;
+  }
+
   .navBarDesktopContainer {
     display: none;
   }
@@ -194,7 +203,7 @@
   }
 
   .nav {
-    flex-flow: column;
+    flex-flow: row;
     justify-content: space-between;
   }
 

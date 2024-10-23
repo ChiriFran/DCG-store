@@ -125,18 +125,18 @@ svg {
   }
 
   .itemDestacadosImgContainer {
-    width: 230px;
-    height: 250px;
+    width: 250px;
+    height: 300px;
     position: relative;
   }
 
   svg {
-    width: 32px;
-    height: 32px;
+    width: 22px;
+    height: 22px;
   }
 
   .itemDestacadosPrice {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 0.5rem 1rem;
   }
 }

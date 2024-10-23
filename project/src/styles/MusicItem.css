@@ -7,10 +7,12 @@
 
 .musicItem {
   width: 100%;
-  max-width: 800px; /* Limita el ancho máximo del contenedor */
+  max-width: 800px;
+  /* Limita el ancho máximo del contenedor */
   height: 560px;
   background-color: #303030;
-  overflow: hidden; /* Asegura que el contenido no se desborde */
+  overflow: hidden;
+  /* Asegura que el contenido no se desborde */
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -19,9 +21,8 @@
 .musicIframe {
   border: none;
   width: 100%;
-  height: calc(
-    100% - 40px
-  ); /* Ajusta el tamaño para dejar espacio para el enlace */
+  height: calc(100% - 40px);
+  /* Ajusta el tamaño para dejar espacio para el enlace */
 }
 
 .BuyBtn {
@@ -35,7 +36,7 @@
   text-decoration: none;
 }
 
-.bandcampBackground:nth-last-child(1){
+.bandcampBackground:nth-last-child(1) {
   position: absolute;
   top: -120%;
   transform: rotate(-20deg);
@@ -48,7 +49,7 @@
   justify-content: center;
 }
 
-.bandcampBackground:nth-last-child(2){
+.bandcampBackground:nth-last-child(2) {
   position: absolute;
   top: -120%;
   transform: rotate(-20deg);
@@ -64,27 +65,25 @@
 
 @media (min-width: 1301px) and (max-width: 1700px) {
   .musicItem {
-  height: 480px;
+    height: 480px;
   }
 }
 
 @media (min-width: 701px) and (max-width: 1300px) {
   .musicItem {
-  height: 520px;
+    height: 520px;
   }
 }
 
 @media screen and (max-width: 700px) {
   .musicItem {
-
-  height: 600px;
+    height: 600px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .musicItem {
 
-  height: 520px;
+    height: 520px;
   }
 }
-
