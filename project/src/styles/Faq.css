@@ -24,9 +24,34 @@
     margin-bottom: 1rem;
 }
 
+.faqSubtitles{
+    width: 50%;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.901);
+    margin: 1rem 0;
+    margin-top: 5rem;
+}
+
+.faqContainer ul{
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
+}
+
+.faqContainer ul li{
+    list-style-type: square;
+    margin-left: 4rem;
+    color: rgba(255, 255, 255, 0.901);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
 @media screen and (max-width: 700px) {
     .faqContainer {
-        padding: 55% 0% 5% 0%;
+        padding: 55% 2% 0% 2%;
     }
 
     .faqTitle {
@@ -36,6 +61,19 @@
     .faqTexts {
         width: 90%;
         line-height: 2;    
+    }
+
+    .faqSubtitles{
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .faqContainer ul{
+        width: 80%;
+    }
+
+    .faqContainer ul li{
+        margin-left: 0;
     }
 
 }
