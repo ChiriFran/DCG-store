@@ -40,7 +40,7 @@
   margin-top: 0.5rem;
   border: none;
   border-bottom: 2px solid #ffffff31;
-  background-color: rgba(247, 247, 247, 0.046);
+  background-color: rgba(174, 174, 174, 0.046);
   color: #f4f4f4;
   box-sizing: border-box;
 }
@@ -48,15 +48,17 @@
 .submitButton {
   width: 100%;
   text-align: end;
-  text-underline-offset: 5px;
   padding: 10px 0;
   border: none;
   background-color: transparent;
   text-decoration: underline;
+  text-underline-offset: 5px;
   color: rgba(190, 190, 190, 0.946);
   font-size: 1rem;
   cursor: pointer;
+  letter-spacing: 1px;
   transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+  
 }
 
 .submitButton:hover {
