@@ -38,28 +38,29 @@
   width: 100%;
   padding: 12px;
   margin-top: 0.5rem;
-  border: 3px solid #ffffffc8;
+  border: none;
+  border-bottom: 2px solid #ffffff31;
   background-color: rgba(247, 247, 247, 0.046);
   color: #f4f4f4;
   box-sizing: border-box;
 }
 
 .submitButton {
-  padding: 10px 15px;
+  width: 100%;
+  text-align: end;
+  text-underline-offset: 5px;
+  padding: 10px 0;
   border: none;
-  background-color: #0c4a18;
-  border: 3px solid #ffffff20;
-  color: rgba(247, 247, 247, 0.946);
+  background-color: transparent;
+  text-decoration: underline;
+  color: rgba(190, 190, 190, 0.946);
   font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.4s, color 0.4s, border-color 0.4s;
 }
 
 .submitButton:hover {
-  background-color: #d8d8d8;
-  border-color: #636363;
-  color: #000;
+  color: rgba(247, 247, 247, 0.946);
 }
 
 .submitButton:disabled {

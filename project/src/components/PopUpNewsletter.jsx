@@ -106,7 +106,7 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
               <input
                 placeholder="email@example.com"
                 type="email"
-                id="email"
+                id="emailPopUp"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
