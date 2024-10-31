@@ -2,24 +2,13 @@ import { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
 import "../styles/ItemDetail.css";
 import { CartContext } from "../context/CartContext";
+import UserLocation from "../helpers/UserLocation"; // Importamos el nuevo componente
 
 const ItemDetail = ({ item }) => {
   const { carrito, agregarAlCarrito, eliminarDelCarrito } = useContext(CartContext);
   const [cantidad, setCantidad] = useState(1);
-  const [talleSeleccionado, setTalleSeleccionado] = useState(""); // Estado para almacenar la talla seleccionada
+  const [talleSeleccionado, setTalleSeleccionado] = useState("");
   const [pais, setPais] = useState(""); // Estado para almacenar el país del usuario
-
-  // Simulación de obtener la ubicación del usuario
-  const obtenerUbicacionUsuario = () => {
-    // Simulamos que el usuario es de Argentina
-    return "Argentina"; // Cambia esto para simular diferentes ubicaciones
-  };
-
-  // Obtén la ubicación al cargar el componente
-  useState(() => {
-    const ubicacion = obtenerUbicacionUsuario();
-    setPais(ubicacion);
-  }, []);
 
   const handleRestar = () => {
     setCantidad((prevCantidad) => Math.max(prevCantidad - 1, 1));
@@ -31,12 +20,12 @@ const ItemDetail = ({ item }) => {
 
   const handleAgregarAlCarrito = () => {
     if (!talleSeleccionado) {
-      alert("Por favor, selecciona un talle antes de agregar al carrito."); // Alerta si no se selecciona talla
+      alert("Por favor, selecciona un talle antes de agregar al carrito.");
       return;
     }
-    agregarAlCarrito(item, cantidad, talleSeleccionado); // Agregar talla al carrito
+    agregarAlCarrito(item, cantidad, talleSeleccionado);
     setCantidad(1);
-    setTalleSeleccionado(""); // Reiniciar selección de talle
+    setTalleSeleccionado("");
   };
 
   const handleEliminarDelCarrito = () => {
@@ -46,18 +35,17 @@ const ItemDetail = ({ item }) => {
     setCantidad(1);
   };
 
-  // Contar la cantidad de productos en el carrito con el mismo ID que el producto actual
   const cantidadEnCarrito = carrito.reduce((total, producto) => {
     return producto.id === item.id ? total + producto.cantidad : total;
   }, 0);
 
-  // Función para manejar la selección de tallas
   const handleTalleSeleccionado = (talle) => {
-    setTalleSeleccionado(talle); // Actualizar el estado con la talla seleccionada
+    setTalleSeleccionado(talle);
   };
 
   return (
     <div className="itemDetailContainer">
+      <UserLocation setPais={setPais} />
       <div className="itemDetailImgContainer">
         <img className="itemDetailImg" src={item.imageDetail} alt={item.title} />
       </div>
@@ -72,7 +60,7 @@ const ItemDetail = ({ item }) => {
               <button
                 key={talle}
                 className={`size-button ${talle === talleSeleccionado ? "selected" : ""}`}
-                onClick={() => handleTalleSeleccionado(talle)} // Llamar a la función de selección de talle
+                onClick={() => handleTalleSeleccionado(talle)}
               >
                 {talle}
               </button>
@@ -87,10 +75,7 @@ const ItemDetail = ({ item }) => {
             handleRestar={handleRestar}
             handleAgregar={handleAgregarAlCarrito}
           />
-          <button
-            className="eliminarDelCarrito"
-            onClick={handleEliminarDelCarrito}
-          >
+          <button className="eliminarDelCarrito" onClick={handleEliminarDelCarrito}>
             Remove
           </button>
         </div>
@@ -98,7 +83,6 @@ const ItemDetail = ({ item }) => {
           Cart: {cantidadEnCarrito} unit/s added.
         </p>
 
-        {/* Botones de pago */}
         <div className="paymentButtons">
           {pais === 'Argentina' ? (
             <button className="mercadoPagoBtn" style={{ backgroundColor: '#00A859', color: 'white', padding: '10px 20px', marginTop: '20px' }}>
@@ -112,7 +96,6 @@ const ItemDetail = ({ item }) => {
         </div>
 
         <p className="itemDetailDescription">{item.description}</p>
-
         <div className="itemDetailDescriptionList">
           <ul>
             <li>Unisex Hoodie</li>
@@ -172,7 +155,6 @@ const ItemDetail = ({ item }) => {
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   );

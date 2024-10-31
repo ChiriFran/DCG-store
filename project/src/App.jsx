@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
@@ -21,7 +21,7 @@ import { CartProvider } from "./context/CartContext.jsx";
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <ScrollToTop>
           <Routes>
@@ -49,7 +49,7 @@ function App() {
         </ScrollToTop>
         <ContactFooter />
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }
