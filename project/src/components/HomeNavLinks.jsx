@@ -7,23 +7,8 @@ function HomeNavLinks() {
     <div className="homeNavLinksContainer">
 
       <ul>
-        <Link to="/Productos/gorras" className="homeNavLink">
-          Gorras
-        </Link>
-      </ul>
-      <ul>
-        <Link to="/Productos/remeras" className="homeNavLink">
-          Remeras
-        </Link>
-      </ul>
-      <ul>
-        <Link to="/Productos/bolsos" className="homeNavLink">
-          Bolsos
-        </Link>
-      </ul>
-      <ul>
-        <Link to="/Productos/buzos" className="homeNavLink">
-          Buzos
+        <Link to="/Productos" className="homeNavLink">
+          Shop
         </Link>
       </ul>
       <ul>

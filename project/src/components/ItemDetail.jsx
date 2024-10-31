@@ -46,9 +46,7 @@ const ItemDetail = ({ item }) => {
   return (
     <div className="itemDetailContainer">
       <UserLocation setPais={setPais} />
-      <div className="itemDetailImgContainer">
-        <img className="itemDetailImg" src={item.imageDetail} alt={item.title} />
-      </div>
+
       <div className="itemDetail">
         <h3 className="itemDetailTitle">{item.title}</h3>
         <p className="itemDetailPrice">$ {item.price}</p>
@@ -156,6 +154,11 @@ const ItemDetail = ({ item }) => {
           </div>
         </div>
       </div>
+
+      <div className="itemDetailImgContainer">
+        <img className="itemDetailImg" src={item.imageDetail} alt={item.title} />
+      </div>
+
     </div>
   );
 };
