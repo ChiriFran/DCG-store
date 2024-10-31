@@ -14,6 +14,7 @@
   width: 100%;
   margin-top: 5rem;
   padding: 1rem 1rem;
+  padding-left: 10%;
 }
 
 .itemDetailImgContainer {
@@ -21,7 +22,7 @@
   align-items: start;
   justify-content: center;
   object-fit: contain;
-  width: 100%;
+  width: 80%;
 }
 
 .itemDetailImg {

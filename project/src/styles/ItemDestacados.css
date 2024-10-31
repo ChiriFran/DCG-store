@@ -66,10 +66,8 @@ svg {
 .card-footer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  border-top: 1px solid #cdcbcb63;
 }
 
 /*Text*/
@@ -82,17 +80,6 @@ svg {
 .text-body {
   font-size: 1.2rem;
   padding-bottom: 10px;
-}
-
-/*Button*/
-.card-button {
-  border: 1px solid #8d8c8c;
-  display: flex;
-  padding: 0.3em;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: 0.3s ease-in-out;
-  background-color: #8d8c8c2d;
 }
 
 /*Hover*/
