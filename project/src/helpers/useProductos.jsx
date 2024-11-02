@@ -12,26 +12,26 @@ const useProductos = (searchTerm = "", category = "", urlCategory = "") => {
     const productosDb = collection(db, "productos");
     let qProductos = productosDb;
 
-    if (searchTerm && category) {
-      qProductos = query(
-        productosDb,
-        where("title", "==", searchTerm),
-        where("category", "==", category)
-      );
-    } else if (searchTerm) {
-      qProductos = query(productosDb, where("title", "==", searchTerm));
-    } else if (category) {
-      qProductos = query(productosDb, where("category", "==", category));
-    } else if (urlCategory) {
-      qProductos = query(productosDb, where("category", "==", urlCategory));
+    if (category || urlCategory) {
+      // Filtra por categoría en la consulta si se define category o urlCategory
+      qProductos = query(productosDb, where("category", "==", category || urlCategory));
     }
 
     getDocs(qProductos)
       .then((productosResp) => {
-        setProductos(
-          productosResp.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        );
+        // Extrae productos y aplica filtro de búsqueda de título si es necesario
+        let data = productosResp.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+
+        if (searchTerm) {
+          // Filtrado parcial en cliente por coincidencias en el título
+          data = data.filter((producto) =>
+            producto.title.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+        }
+
+        setProductos(data);
         setIsLoading(false);
+
         if (category) {
           setTitulo(capitalizeFirstLetter(category));
         } else if (urlCategory) {

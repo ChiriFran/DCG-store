@@ -14,7 +14,6 @@
   padding: 0.5rem 0;
   padding-left: 0.3rem;
   border: none;
-  display: none;
 }
 
 .categorySelect {
@@ -22,7 +21,6 @@
   border: none;
   padding: 0.5rem 0;
   padding-left: 0.3rem;
-  display: none;
   background-color: rgba(255, 255, 255, 0.137);
   color: #f4f4f481;
 }
@@ -45,7 +43,6 @@ option {
   padding: 0.6rem 1rem;
   background-color: #ffffff1e;
   color: #f4f4f481;
-  display: none;
 }
 
 @media screen and (max-width: 700px) {
