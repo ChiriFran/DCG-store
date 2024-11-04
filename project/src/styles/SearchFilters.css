@@ -5,24 +5,31 @@
   justify-content: start;
   width: 100%;
   padding: 0.5rem 2rem;
-  margin-top: 30vh;
 }
 
 .barraBusqueda {
+  height: 30px;
   font-size: clamp(0.8rem, 2vw, 1rem);
   margin: 0 0.5rem;
   padding: 0.5rem 0;
   padding-left: 0.3rem;
   border: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.457);
+  color: #f4f4f4;
 }
 
 .categorySelect {
+  height: 30px;
   margin: 0 0;
   border: none;
   padding: 0.5rem 0;
+  margin: 0 0.5rem;
   padding-left: 0.3rem;
   background-color: rgba(255, 255, 255, 0.137);
   color: #f4f4f481;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+
 }
 
 .categorySelect:focus {
@@ -31,12 +38,15 @@
 }
 
 option {
-  color: rgb(0, 0, 0); /* Cambia el color del texto */
-  font-weight: bold; /* Cambia el peso de la fuente */
+  color: rgb(0, 0, 0);
+  /* Cambia el color del texto */
+  font-weight: bold;
+  /* Cambia el peso de la fuente */
 }
 
 
 .btnBuscar {
+  height: 30px;
   border: none;
   font-size: clamp(0.8rem, 2vw, 1rem);
   margin: 0 0;

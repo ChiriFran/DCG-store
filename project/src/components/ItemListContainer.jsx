@@ -28,7 +28,7 @@ const ItemListContainer = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <>
+    <div className="shopContainer">
       <SearchFilters onSearch={handleSearch} />
       <div className="productosContainer">
         <ItemList productos={productos} titulo={titulo} />
@@ -38,7 +38,7 @@ const ItemListContainer = () => {
           urlCategory={urlCategory}
         />
       </div>
-    </>
+    </div>
   );
 };
 
