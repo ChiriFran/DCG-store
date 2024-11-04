@@ -5,7 +5,7 @@ function Footer() {
     <>
       <section className="footerContainer">
         <div className="footer">
-          <p className="footerDate">2024</p>
+          <p className="footerDate">All rights reserved  © 2024 - DCG </p>
         </div>
       </section>
     </>

@@ -5,7 +5,12 @@
     align-items: center;
     justify-content: space-around;
     padding: 0 1rem;
-    margin-top: 5rem;
-    background-color: #000;
+    margin-bottom: 1rem;
+    background-color: transparent;
     color: #ffffff42;
+}
+
+.footerDate{
+    letter-spacing: 4px;
+    font-size: 0.6rem;
 }

@@ -13,6 +13,11 @@ function HomeNavLinks() {
         </Link>
       </ul>
       <ul>
+        <Link to="/Music" className={`homeNavLink ${location.pathname === "/Music" ? "active" : ""}`}>
+          Music
+        </Link>
+      </ul>
+      <ul>
         <Link to="/Eventos" className={`homeNavLink ${location.pathname === "/Eventos" ? "active" : ""}`}>
           Events
         </Link>
