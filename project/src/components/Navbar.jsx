@@ -57,6 +57,7 @@ const Navbar = () => {
         </ul>
 
         <Link to="/" className="link">
+          <img className="logoImg" src="../../media/logo/logo.svg" alt="DCG" title="DCG" />
           <h1 className="brand">D-troit Class'c Galery</h1>
         </Link>
 

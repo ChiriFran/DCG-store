@@ -26,7 +26,7 @@
   text-decoration: none;
   color: #e9e9e9;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
@@ -58,8 +58,11 @@
   margin: 0 0.5rem;
 }
 
+
 .brand {
   letter-spacing: 4px;
+  font-size: 0.5rem;
+  color: transparent;
 }
 
 .navBarDesktopContainer {
@@ -269,4 +272,6 @@
     display: flex;
     flex-direction: column;
   }
+
+
 }
