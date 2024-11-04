@@ -82,7 +82,7 @@ function HomeVideo() {
         onClick={toggleMute} // Activar/desactivar audio al hacer clic en el video
       >
         <source
-          src={`../media/homeVideo.mp4?${new Date().getTime()}`}
+          src={`project/media/homeVideo.mp4?${new Date().getTime()}`}
           type="video/mp4"
         />
         Su navegador no soporta la etiqueta de vídeo.
@@ -92,8 +92,8 @@ function HomeVideo() {
           <img
             src={
               isMuted
-                ? "../media/audio-off-svgrepo-com.svg"
-                : "../media/audio-svgrepo-com.svg"
+                ? "project/media/audio-off-svgrepo-com.svg"
+                : "project/media/audio-svgrepo-com.svg"
             }
             alt={
               isMuted ? "Reproducir audio." : "Silenciar reproduccion de audio."
