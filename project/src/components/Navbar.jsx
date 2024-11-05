@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect, useRef } from "react";
 import "../styles/Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import logo from '../../media/logo/logo.svg';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -57,7 +58,7 @@ const Navbar = () => {
         </ul>
 
         <Link to="/" className="link">
-          <img className="logoImg" src="../../media/logo/logo.svg" alt="DCG" title="DCG" />
+          <img src={logo} alt="Logo" />
           <h1 className="brand">D-troit Class'c Galery</h1>
         </Link>
 
