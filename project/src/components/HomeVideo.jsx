@@ -91,14 +91,8 @@ function HomeVideo() {
       <div className="videoControlsContainer">
         <button onClick={toggleMute}>
           <img
-            src={
-              isMuted
-                ? { audioOff }
-                : { audioOn }
-            }
-            alt={
-              isMuted ? "Reproducir audio." : "Silenciar reproduccion de audio."
-            }
+            src={isMuted ? audioOff : audioOn}
+            alt={isMuted ? "Reproducir audio." : "Silenciar reproducción de audio."}
           />
         </button>
         <input
