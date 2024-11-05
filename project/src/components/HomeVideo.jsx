@@ -1,5 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import audioOn from '../../media/icons/audio-svgrepo-com.svg';
+import audioOff from '../../media/icons/audio-off-svgrepo-com.svg';
+import homeVideo from '../../media/video/homeVideo.mp4';
 import "../styles/HomeVideo.css";
 
 function HomeVideo() {
@@ -81,10 +84,8 @@ function HomeVideo() {
         onEnded={() => videoRef.current.pause()}
         onClick={toggleMute} // Activar/desactivar audio al hacer clic en el video
       >
-        <source
-          src={`../../media/homeVideo.mp4?${new Date().getTime()}`}
-          type="video/mp4"
-        />
+        <source src={homeVideo} type="video/mp4" />
+
         Su navegador no soporta la etiqueta de vídeo.
       </video>
       <div className="videoControlsContainer">
@@ -92,8 +93,8 @@ function HomeVideo() {
           <img
             src={
               isMuted
-                ? "../../media/audio-off-svgrepo-com.svg"
-                : "../../media/audio-svgrepo-com.svg"
+                ? { audioOff }
+                : { audioOn }
             }
             alt={
               isMuted ? "Reproducir audio." : "Silenciar reproduccion de audio."
