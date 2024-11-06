@@ -294,6 +294,7 @@
   .itemDetailImgContainer {
     display: flex;
     width: 100%;
+    min-height: 500px;
     align-items: center;
     justify-content: center;
     order: 1;
