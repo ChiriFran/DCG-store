@@ -1,5 +1,6 @@
-// NoResultFound.js
+
 import React from "react";
+import '../styles/NoResultsFound.css'
 
 const NoResultFound = ({ searchTerm }) => {
   return (
