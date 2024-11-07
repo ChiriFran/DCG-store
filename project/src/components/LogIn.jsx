@@ -87,7 +87,7 @@ function LogIn() {
                 <Link className="logedInButtonTienda" to="/Productos">
                   ¡Visitar Tienda!
                 </Link>
-                <button onClick={handleLogOut}>Log out</button>
+                <button onClick={handleLogOut} className="logOutButton">Log out</button>
               </div>
             ) : (
               <form className="form-log-in" onSubmit={handleLogIn}>

@@ -18,7 +18,7 @@ function Newsletter() {
 
     if (!emailPattern.test(email)) {
       setErrorMessage(
-        "Por favor, ingresa un correo electrónico válido que termine en @gmail.com, @hotmail.com, o @yahoo.com"
+        "Please enter a valid email ending in @gmail.com, @hotmail.com, or @yahoo.com."
       );
       setIsSubmitting(false);
       return;
@@ -30,7 +30,7 @@ function Newsletter() {
       const querySnapshot = await getDocs(emailQuery);
 
       if (!querySnapshot.empty) {
-        setErrorMessage("Este correo ya está registrado en nuestro newsletter.");
+        setErrorMessage("This email is already registered in our newsletter.");
         setIsSubmitting(false);
         return;
       }
@@ -42,14 +42,14 @@ function Newsletter() {
       });
 
       setEmail("");
-      setSuccessMessage("¡Ya estás suscrito a nuestro Newsletter!");
+      setSuccessMessage("¡You have subscribed to our newsletter!");
 
       setTimeout(() => {
         setSuccessMessage("");
       }, 5000);
     } catch (error) {
-      console.error("Error al agregar el documento: ", error);
-      alert("Hubo un error al suscribirse. Por favor, inténtalo de nuevo.");
+      console.error("Error adding document: ", error);
+      alert("There was an error when subscribing. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -57,9 +57,9 @@ function Newsletter() {
 
   return (
     <div className="newsletterContainer">
-      <h3 className="newsletterTitle">Forma parte de nuestra comunidad</h3>
+      <h3 className="newsletterTitle">Become part of our community</h3>
       <p className="newsletterText">
-        Recibe promociones y descuentos exclusivos.
+        Receive exclusive promotions and discounts.
       </p>
       <form className="newsletterForm" onSubmit={handleSubmit}>
         <div className="formGroup">
@@ -78,7 +78,7 @@ function Newsletter() {
           disabled={isSubmitting}
           className={`submitButton ${isSubmitting ? "submitting" : ""}`}
         >
-          {isSubmitting ? "Enviando..." : "Suscribirse"}
+          {isSubmitting ? "Sending..." : "Subscribe"}
         </button>
         {successMessage && <p className="successMessage">{successMessage}</p>}
       </form>

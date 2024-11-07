@@ -18,7 +18,7 @@ function SignUp() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setError("Las contraseñas no coinciden");
+      setError("Passwords do not match");
       return;
     }
     setLoading(true);
@@ -34,7 +34,7 @@ function SignUp() {
         email: email,
       });
 
-      setSuccessMessage("Registro completado con éxito, inicia sesión en Log in");
+      setSuccessMessage("Registration successfully completed!");
       setFirstName("");
       setLastName("");
       setEmail("");

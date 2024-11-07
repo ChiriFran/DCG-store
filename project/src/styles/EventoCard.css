@@ -43,28 +43,6 @@
   justify-content: space-around;
 }
 
-.eventCardDate {
-  color: rgba(128, 128, 128, 0.548);
-  font-weight: 800;
-}
-
-.eventCardTitle {
-  color: rgba(252, 252, 252, 0.892);
-  font-weight: 800;
-}
-
-.eventCardDescription {
-  font-style: italic;
-  padding: 0 2rem;
-  margin: 1rem 0;
-}
-
-.eventCardAutor {
-  color: rgba(225, 225, 225, 0.701);
-  font-weight: 800;
-  margin-left: 0.5rem;
-}
-
 @media screen and (max-width: 700px) {
   .event-card-container {
     height: 600px;

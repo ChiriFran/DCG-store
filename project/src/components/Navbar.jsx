@@ -109,7 +109,13 @@ const Navbar = () => {
           {["/", "/Productos", "/Music", "/Eventos", "/Blogs", "/AboutUs", "/Faq"].map((path, index) => (
             <li key={index}>
               <Link to={path} className={`link ${location.pathname === path ? "active" : ""}`}>
-                {path === "/" ? "Home" : path === "/Productos" ? "Shop" : path.slice(1)}
+                {path === "/"
+                  ? "Home"
+                  : path === "/Productos"
+                    ? "Shop"
+                    : path === "/Eventos"
+                      ? "Events"
+                      : path.slice(1)}
               </Link>
             </li>
           ))}

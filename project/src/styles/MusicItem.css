@@ -1,28 +1,62 @@
-.musicItemContainer {
-  width: 100%;
+.musicContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  margin-top: 20vh;
+}
+
+.toggleViewButton {
+  margin: 10px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: #00abfb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.toggleViewButton:hover {
+  background-color: #007bb5;
+}
+
+.musicGrid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+}
+
+.musicGrid.compact .musicItem {
+  height: 250px;
+  width: auto;
+}
+
+.musicGrid:not(.compact) .musicItem {
+  height: 500px;
+  width: auto;
 }
 
 .musicItem {
-  width: 100%;
-  max-width: 800px;
-  /* Limita el ancho máximo del contenedor */
-  height: 560px;
   background-color: #30303062;
-  overflow: hidden;
-  /* Asegura que el contenido no se desborde */
   display: flex;
   flex-direction: column;
   justify-content: start;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, height 0.3s;
+}
+
+.musicItem:hover {
+  transform: scale(1.03);
 }
 
 .musicIframe {
   border: none;
   width: 100%;
   height: calc(100% - 40px);
-  /* Ajusta el tamaño para dejar espacio para el enlace */
 }
 
 .BuyBtn {
@@ -36,54 +70,28 @@
   text-decoration: none;
 }
 
-.bandcampBackground:nth-last-child(1) {
-  position: absolute;
-  top: -120%;
-  transform: rotate(-20deg);
-  left: 0.5rem;
-  font-weight: 500;
-  color: #f4f4f41b;
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
-}
-
+.bandcampBackground:nth-last-child(1),
 .bandcampBackground:nth-last-child(2) {
   position: absolute;
   top: -120%;
   transform: rotate(-20deg);
-  right: 0.5rem;
-  font-weight: 500;
   color: #f4f4f41b;
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
 }
 
-
-@media (min-width: 1301px) and (max-width: 1700px) {
-  .musicItem {
-    height: 480px;
+@media (min-width: 900px) {
+  .musicGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 701px) and (max-width: 1300px) {
-  .musicItem {
-    height: 520px;
+@media (min-width: 600px) and (max-width: 899px) {
+  .musicGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 700px) {
-  .musicItem {
-    height: 600px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .musicItem {
-
-    height: 520px;
+@media (max-width: 599px) {
+  .musicGrid {
+    grid-template-columns: 1fr;
   }
 }
