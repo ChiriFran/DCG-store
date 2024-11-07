@@ -31,20 +31,33 @@ const Eventos = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="eventosContainer">
-      {eventos.map((evento) => (
-        <div key={evento.id} className="eventoCard">
-          <div className="imgEventosContainer">
-            <img src={evento.image} alt="" />
+    <>
+      <div className="eventosContainer">
+        <h2 className="eventosTitle">Upcoming events</h2>
+        {eventos.map((evento) => (
+          <div key={evento.id} className="eventoCard">
+            <div className="imgEventosContainer">
+              <img src={evento.image} alt="" />
+            </div>
           </div>
-          <div className="eventoContent">
-            <h3>{evento.title}</h3>
-            <p>{evento.description}</p>
-            <span>{evento.author}</span> - <span>{evento.date}</span>
+        ))}
+      </div>
+
+      <div className="pastEventosContainer">
+        <h2 className="pastEventosTitle">Past events</h2>
+        {eventos.map((evento) => (
+          <div key={evento.id} className="pastEventoCard">
+            <div className="pastImgEventosContainer">
+              <img src={evento.image} alt="" />
+              <img src={evento.image} alt="" />
+              <img src={evento.image} alt="" />
+              <img src={evento.image} alt="" />
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+
+    </>
   );
 };
 

@@ -10,9 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 200px;
-  padding: 1rem 1rem;
+  width: 600px;
+  height: 800px;
 }
 
 .imgEventosContainer img {
@@ -23,13 +22,77 @@
 .eventoCard {
   display: flex;
   flex-flow: row;
-  background-color: #33333343;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 10px;
 }
 
-.eventoContent {
+.eventosTitle {
+  width: 100%;
+  padding: 2% 25%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(212, 212, 212);
+  border-top: 1px solid rgb(128, 128, 128);
+  padding-top: 4rem;
+}
+
+/* past events */
+
+.pastEventosContainer {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  color: #f4f4f4;
+  overflow: hidden;
+}
+
+.pastEventosTitle {
+  width: 100%;
+  padding: 2% 25%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(212, 212, 212);
+  border-top: 1px solid rgb(128, 128, 128);
+  padding-top: 4rem;
+}
+
+.pastImgEventosContainer {
+  width: 600px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.pastImgEventosContainer img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: .2s;
+}
+
+
+.pastImgEventosContainer img:hover {
+  opacity: 1;
+  transition: .5s;
+}
+
+.pastEventoCard {
+  display: flex;
+  flex-flow: row;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/* .eventoContent {
+  display: none;
   padding: 1rem 1rem;
 }
 
@@ -47,30 +110,48 @@
   font-size: 0.8rem;
   color: #aaa;
 }
-
+ */
 @media screen and (max-width: 700px) {
   .eventosContainer {
+    width: 100%;
     padding: 1rem;
+    margin-top: 20vh;
+    margin-bottom: 1rem;
   }
 
-  .imgEventosContainer {
-    width: 250px;
-    height: 300px;
+  .eventosTitle {
+    width: 100%;
+    padding: 8% 0%;
   }
 
   .eventoCard {
-    flex-flow: column;
+    padding: 0;
+  }
+
+  .imgEventosContainer {
+    width: 300px;
+    height: 500px;
+  }
+
+  /* past events */
+
+  .pastEventosContainer {
     width: 100%;
+    padding: 1rem;
   }
 
-  .eventoCard h3 {
-    font-size: 1rem;
+  .pastEventosTitle {
+    width: 100%;
+    padding: 8% 0%;
   }
 
-  .eventoCard p {
-    font-size: 0.8rem;
-    line-height: 1.4;
-    margin: 1rem 0;
+  .pastEventoCard {
+    padding: 0;
   }
-  
+
+  .pastImgEventosContainer {
+    width: 300px;
+    height: 500px;
+  }
+
 }
