@@ -10,7 +10,7 @@
   max-width: 800px;
   /* Limita el ancho máximo del contenedor */
   height: 560px;
-  background-color: #303030;
+  background-color: #30303062;
   overflow: hidden;
   /* Asegura que el contenido no se desborde */
   display: flex;

@@ -39,6 +39,7 @@
     grid-template-rows: auto;
     padding: 0 0;
     gap: 2rem 0;
+    margin-top: 15vh;
   }
 
   .musicCategoryTitle {

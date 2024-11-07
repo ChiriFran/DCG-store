@@ -8,7 +8,6 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { carrito } = useContext(CartContext);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const menuRef = useRef();
   const location = useLocation();
@@ -32,17 +31,9 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showMenu]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
-      <nav className={`nav ${showMenu ? "active" : ""} ${isScrolled ? "scrolled" : ""}`}>
+      <nav className={`nav ${showMenu ? "active" : ""}`}>
         <ul className="userMenuDesktop">
           {isLoggedIn ? (
             <li>
@@ -113,7 +104,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className={`navBarDesktopContainer ${isScrolled ? "stickySlideAnimation" : ""} ${isScrolled ? "scrolled" : ""}`}>
+      <div className="navBarDesktopContainer">
         <ul className="navMenuDesktop">
           {["/", "/Productos", "/Music", "/Eventos", "/Blogs", "/AboutUs", "/Faq"].map((path, index) => (
             <li key={index}>
