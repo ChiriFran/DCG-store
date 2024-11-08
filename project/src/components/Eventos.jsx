@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase/config";
 import Loader from "./Loader";
 import "../styles/Eventos.css";
 
 const Eventos = () => {
-  const [eventos, setEventos] = useState([]);
+  const [upcomingEvent, setUpcomingEvent] = useState(null);
+  const [pastEvents, setPastEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [ratings, setRatings] = useState({}); // Estado para calificaciones independientes
 
   useEffect(() => {
     const fetchEventos = async () => {
@@ -14,10 +16,20 @@ const Eventos = () => {
       const eventosDb = collection(db, "eventos");
 
       try {
-        const eventosResp = await getDocs(eventosDb);
-        setEventos(
-          eventosResp.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        );
+        // Ordenamos por ID en orden descendente para tener el evento más reciente al principio
+        const eventosQuery = query(eventosDb, orderBy("id", "desc"));
+        const eventosResp = await getDocs(eventosQuery);
+
+        const eventos = eventosResp.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+
+        // Verificar si hay eventos y asignarlos correctamente
+        if (eventos.length > 0) {
+          setUpcomingEvent(eventos[0]); // El primero es el evento más reciente
+          setPastEvents(eventos.slice(1)); // El resto va a "Past events"
+        }
       } catch (error) {
         console.error("Error fetching eventos: ", error);
       } finally {
@@ -28,98 +40,53 @@ const Eventos = () => {
     fetchEventos();
   }, []);
 
+  // Función para manejar la calificación de estrellas para cada evento
+  const handleRatingChange = (eventoId, rating) => {
+    setRatings((prevRatings) => ({
+      ...prevRatings,
+      [`${eventoId}`]: rating,
+    }));
+  };
+
   if (isLoading) return <Loader />;
 
   return (
     <>
       <div className="eventosContainer">
         <h2 className="eventosTitle">Upcoming events</h2>
-        {eventos.map((evento) => (
-          <div key={evento.id} className="eventoCard">
+        {upcomingEvent && (
+          <div className="eventoCard">
             <div className="imgEventosContainer">
-              <img src={evento.image} alt="" />
+              <img src={upcomingEvent.image} alt="" />
             </div>
           </div>
-        ))}
+        )}
       </div>
-
+      <h2 className="pastEventosTitle">Past events</h2>
       <div className="pastEventosContainer">
-        <h2 className="pastEventosTitle">Past events</h2>
-        {eventos.map((evento) => (
+        {pastEvents.map((evento) => (
           <div key={evento.id} className="pastEventoCard">
-            <div className="pastImgEventosContainer">
-              <div className="pastImgEventos">
-                <img src={evento.image} alt="" />
-                {/* From Uiverse.io by PriyanshuGupta28  */}
-                <div class="EventoRating">
-                  <input value="5" name="rating" id="star5" type="radio"></input>
-                  <label for="star5"></label>
-                  <input value="4" name="rating" id="star4" type="radio"></input>
-                  <label for="star4"></label>
-                  <input value="3" name="rating" id="star3" type="radio"></input>
-                  <label for="star3"></label>
-                  <input value="2" name="rating" id="star2" type="radio"></input>
-                  <label for="star2"></label>
-                  <input value="1" name="rating" id="star1" type="radio"></input>
-                  <label for="star1"></label>
-                </div>
-              </div>
-
-              <div className="pastImgEventos">
-                <img src={evento.image} alt="" />
-                {/* From Uiverse.io by PriyanshuGupta28  */}
-                <div class="EventoRating">
-                  <input value="5" name="rating" id="star5" type="radio"></input>
-                  <label for="star5"></label>
-                  <input value="4" name="rating" id="star4" type="radio"></input>
-                  <label for="star4"></label>
-                  <input value="3" name="rating" id="star3" type="radio"></input>
-                  <label for="star3"></label>
-                  <input value="2" name="rating" id="star2" type="radio"></input>
-                  <label for="star2"></label>
-                  <input value="1" name="rating" id="star1" type="radio"></input>
-                  <label for="star1"></label>
-                </div>
-              </div>
-
-              <div className="pastImgEventos">
-                <img src={evento.image} alt="" />
-                {/* From Uiverse.io by PriyanshuGupta28  */}
-                <div class="EventoRating">
-                  <input value="5" name="rating" id="star5" type="radio"></input>
-                  <label for="star5"></label>
-                  <input value="4" name="rating" id="star4" type="radio"></input>
-                  <label for="star4"></label>
-                  <input value="3" name="rating" id="star3" type="radio"></input>
-                  <label for="star3"></label>
-                  <input value="2" name="rating" id="star2" type="radio"></input>
-                  <label for="star2"></label>
-                  <input value="1" name="rating" id="star1" type="radio"></input>
-                  <label for="star1"></label>
-                </div>
-              </div>
-
-              <div className="pastImgEventos">
-                <img src={evento.image} alt="" />
-                {/* From Uiverse.io by PriyanshuGupta28  */}
-                <div class="EventoRating">
-                  <input value="5" name="rating" id="star5" type="radio"></input>
-                  <label for="star5"></label>
-                  <input value="4" name="rating" id="star4" type="radio"></input>
-                  <label for="star4"></label>
-                  <input value="3" name="rating" id="star3" type="radio"></input>
-                  <label for="star3"></label>
-                  <input value="2" name="rating" id="star2" type="radio"></input>
-                  <label for="star2"></label>
-                  <input value="1" name="rating" id="star1" type="radio"></input>
-                  <label for="star1"></label>
-                </div>
+            <div className="pastImgEventos">
+              <img src={evento.image} alt="" />
+              <div className="EventoRating">
+                {[5, 4, 3, 2, 1].map((value) => (
+                  <React.Fragment key={value}>
+                    <input
+                      type="radio"
+                      id={`star${value}-${evento.id}`}
+                      name={`rating-${evento.id}`}
+                      value={value}
+                      checked={ratings[`${evento.id}`] === value}
+                      onChange={() => handleRatingChange(evento.id, value)}
+                    />
+                    <label htmlFor={`star${value}-${evento.id}`} />
+                  </React.Fragment>
+                ))}
               </div>
             </div>
           </div>
         ))}
       </div>
-
     </>
   );
 };
