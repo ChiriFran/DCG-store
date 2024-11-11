@@ -12,7 +12,7 @@ const ItemListContainerDestacados = () => {
 
   return (
     <>
-      <h3 className="homeText">DCG Basics</h3>
+      <h3 className="homeText">Shop</h3>
       <ItemListDestacados productos={productos} />
     </>
   );

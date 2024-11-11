@@ -9,8 +9,10 @@
 
 .barraBusqueda {
   height: 40px;
+  width: 180px;
   font-size: clamp(0.8rem, 2vw, 1rem);
-  margin: 0 0.5rem;
+  font-weight: 400;
+  letter-spacing: 3px;
   padding: 0.5rem 0;
   padding-left: 0.3rem;
   border: none;
@@ -21,6 +23,7 @@
 
 .categorySelect {
   height: 40px;
+  width: 180px;
   margin: 0 0;
   border: none;
   padding: 0.5rem 0;
@@ -29,6 +32,11 @@
   background-color: rgba(255, 255, 255, 0.064);
   color: #f4f4f481;
   font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
 }
 

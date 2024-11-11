@@ -31,7 +31,7 @@ const ItemDestacados = ({ producto }) => {
         </div>
         <div className="card-footer">
           <span className="ntext-title itemDestacadosPrice">
-            ${producto.price}
+            ${producto.price}.-
           </span>
         </div>
       </div>

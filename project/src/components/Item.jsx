@@ -18,7 +18,7 @@ const Item = ({ producto }) => {
       <h2 className="itemTitle">
         {producto.title}
       </h2>
-      <h3 className="itemPrice">${producto.price}</h3>{" "}
+      <h3 className="itemPrice">${producto.price}.-</h3>{" "}
     </div>
   );
 };

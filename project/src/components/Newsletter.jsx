@@ -78,7 +78,7 @@ function Newsletter() {
           disabled={isSubmitting}
           className={`submitButton ${isSubmitting ? "submitting" : ""}`}
         >
-          {isSubmitting ? "Sending..." : "Subscribe"}
+          {isSubmitting ? "Sending..." : "Send"}
         </button>
         {successMessage && <p className="successMessage">{successMessage}</p>}
       </form>

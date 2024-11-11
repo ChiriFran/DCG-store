@@ -21,7 +21,7 @@ const SearchFilters = ({ onSearch }) => {
       <input
         className="barraBusqueda"
         type="text"
-        placeholder="Buscar por nombre"
+        placeholder="Search by name"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={handleKeyDown}  // Detecta Enter en el input
@@ -31,13 +31,13 @@ const SearchFilters = ({ onSearch }) => {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       >
-        <option value="">Todas las categorías</option>
-        <option value="Remeras">Remeras</option>
-        <option value="Buzos">Buzos</option>
-        <option value="Gorras">Gorras</option>
-        <option value="Bolsas">Bolsas</option>
+        <option value="">See all categories</option>
+        <option value="Remeras">T-shirts</option>
+        <option value="Buzos">Hoodie</option>
+        <option value="Gorras">Caps</option>
+        <option value="Bolsas">Bags</option>
       </select>
-      <button className="btnBuscar" onClick={handleSearch}>Buscar</button>
+      <button className="btnBuscar" onClick={handleSearch}>Search</button>
     </div>
   );
 };

@@ -11,8 +11,9 @@
   padding: 2% 25%;
   font-size: 1.2rem;
   font-weight: 400;
+  letter-spacing: 3px;
   color: rgb(212, 212, 212);
-  border-top: 1px solid rgb(128, 128, 128);
+  border-top: 1px solid rgba(128, 128, 128, 0.415);
   padding-top: 4rem;
 }
 
@@ -47,8 +48,9 @@
   padding: 2% 25%;
   font-size: 1.2rem;
   font-weight: 400;
+  letter-spacing: 3px;
   color: rgb(212, 212, 212);
-  border-top: 1px solid rgb(128, 128, 128);
+  border-top: 1px solid rgba(128, 128, 128, 0.415);
   padding-top: 4rem;
 }
 
@@ -66,6 +68,7 @@
 .pastEventoCard {
   width: 50%;
   background-color: transparent;
+  padding: 0.25rem 0.25rem;
 }
 
 .pastEventoCard img {

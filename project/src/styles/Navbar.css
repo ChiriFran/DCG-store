@@ -23,13 +23,14 @@
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
+  letter-spacing: 3px;
   z-index: 1000;
 }
 
 .link::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -2px;
   /* Ajusta la distancia bajo el texto */
   left: 0;
   width: 100%;

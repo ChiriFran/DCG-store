@@ -35,7 +35,7 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
 
     if (!emailPattern.test(email)) {
       setErrorMessage(
-        "Por favor, ingresa un correo electrónico válido que termine en @gmail.com, @hotmail.com, o @yahoo.com"
+        "Please enter a valid email ending in @gmail.com, @hotmail.com, or @yahoo.com."
       );
       setIsSubmitting(false);
       return;
@@ -47,7 +47,7 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
       const querySnapshot = await getDocs(emailQuery);
 
       if (!querySnapshot.empty) {
-        setErrorMessage("Este correo ya está registrado en nuestro newsletter.");
+        setErrorMessage("This email is already registered in our newsletter.");
         setIsSubmitting(false);
         return;
       }
@@ -59,7 +59,7 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
       });
 
       setEmail("");
-      setSuccessMessage("¡Ya estás suscrito a nuestro Newsletter!");
+      setSuccessMessage("You are already subscribed to our Newsletter!");
 
       // Cerrar el modal después de 3 segundos
       setTimeout(() => {
@@ -67,8 +67,8 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
         handleClose(); // Cerrar el modal automáticamente
       }, 3000);
     } catch (error) {
-      console.error("Error al agregar el documento: ", error);
-      alert("Hubo un error al suscribirse. Por favor, inténtalo de nuevo.");
+      console.error("Error adding document: ", error);
+      alert("There was an error when subscribing. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -97,9 +97,9 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
           X
         </button>
         <div className="modalNewsletterContainer">
-          <h3 className="modalNewsletterTitle">Forma parte de nuestra comunidad</h3>
+          <h3 className="modalNewsletterTitle">Become part of our community</h3>
           <p className="modalNewsletterText">
-            Recibe promociones y descuentos exclusivos.
+            Receive exclusive promotions and discounts.
           </p>
           <form className="modalNewsletterForm" onSubmit={handleSubmit}>
             <div className="modalFormGroup">
@@ -118,7 +118,7 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
               disabled={isSubmitting}
               className={`modalSubmitButton ${isSubmitting ? "modalSubmitting" : ""}`}
             >
-              {isSubmitting ? "Enviando..." : "Suscribirse"}
+              {isSubmitting ? "Sending..." : "Send"}
             </button>
             {successMessage && <p className="modalSuccessMessage">{successMessage}</p>}
           </form>
