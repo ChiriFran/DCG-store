@@ -41,8 +41,9 @@
   font-size: 1.5rem;
   margin-top: 2rem;
   padding-bottom: 1rem;
-  color: rgba(225, 225, 225, 0.8);
+  color: rgba(225, 225, 225, 0.97);
   border-bottom: 1px solid rgba(96, 96, 96, 0.44);
+  letter-spacing: 4px;
 }
 
 .paymentButtons {
@@ -60,6 +61,8 @@
 
 .sizeSelectorContainer {
   margin: 1rem 0;
+  border-bottom: 1px solid rgba(96, 96, 96, 0.44);
+  padding-bottom: 1rem;
 }
 
 .sizeSelectorContainer h3 {
@@ -70,12 +73,19 @@
   margin: 1rem 0;
 }
 
+#size-selector{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .size-button {
   border: none;
   padding: 0.5rem 0.5rem;
   background-color: transparent;
   color: rgba(225, 225, 225, 0.5);
-  margin: 0 0.2rem;
 }
 
 .size-button.selected {

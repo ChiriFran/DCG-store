@@ -1,6 +1,6 @@
 import "../styles/LogIn.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth, signInWithEmailAndPassword, signOut } from "../firebase/config";
 
 function LogIn() {
@@ -10,6 +10,7 @@ function LogIn() {
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState("");
+  const navigate = useNavigate();
 
   // Comprobar si el usuario está autenticado al cargar el componente
   useEffect(() => {
@@ -57,6 +58,9 @@ function LogIn() {
       setUserEmail(userEmail);
       localStorage.setItem("userEmail", userEmail);
       localStorage.setItem("loggedIn", "true");
+
+      // Redirigir a la página anterior
+      navigate(-1);
     } catch (error) {
       setError(error.message);
     } finally {

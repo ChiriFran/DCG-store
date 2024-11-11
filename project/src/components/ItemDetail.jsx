@@ -49,7 +49,7 @@ const ItemDetail = ({ item }) => {
 
       <div className="itemDetail">
         <h3 className="itemDetailTitle">{item.title}</h3>
-        <p className="itemDetailPrice">$ {item.price}</p>
+        <p className="itemDetailPrice">$ {item.price}.-</p>
 
         <div className="sizeSelectorContainer">
           <h3>Size</h3>
