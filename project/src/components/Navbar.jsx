@@ -49,7 +49,7 @@ const Navbar = () => {
         </ul>
 
         <Link to="/" className="link">
-          <img src={logo} alt="Logo" />
+          <img className="logoImg" src={logo} alt="Logo" />
           <h1 className="brand">D-troit Class'c Galery</h1>
         </Link>
 

@@ -3,7 +3,8 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    padding: 15% 10% 5% 10%;
+    padding: 0 10%;
+    margin-top: 10vh;
     color: white;
 }
 
@@ -28,7 +29,7 @@
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.901);
     margin: 1rem 0;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .faqContainer ul{
@@ -50,7 +51,8 @@
 
 @media screen and (max-width: 700px) {
     .faqContainer {
-        padding: 55% 2% 0% 2%;
+        padding: 0 0 5% 0;
+        margin-top: 5vh;
     }
 
     .faqTitle {

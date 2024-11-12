@@ -1,20 +1,7 @@
 .shopContainer{
-  margin-top: 30vh;
+  margin-top: 10vh;
 }
 
 .itemListContainer{
   padding: 0 10%;
-}
-
-@media screen and (max-width: 700px) {
-  .shopContainer{
-    margin-top: 15vh;
-  }
-}
-
-@media (min-width: 701px) and (max-width: 1300px) {
-  .shopContainer{
-    margin-top: 25vh;
-  }
-
 }

@@ -1,16 +1,12 @@
-
 .nav {
   display: flex;
   width: 100%;
-  height: 10vh;
   flex-flow: row;
   align-items: start;
   padding: 0.5rem 1rem;
   justify-content: space-between;
   z-index: 10000;
   background-color: #0a0a0a;
-  position: fixed;
-  top: 0;
   transition: height 0.5s ease;
 }
 
@@ -25,6 +21,10 @@
   font-size: 0.8rem;
   letter-spacing: 3px;
   z-index: 1000;
+}
+
+.logoImg {
+  margin-top: 3rem;
 }
 
 .link::after {
@@ -63,25 +63,13 @@
 .navBarDesktopContainer {
   display: flex;
   width: 100%;
-  height: 10vh;
   flex-flow: row;
   align-items: center;
   justify-content: center;
   background-color: #0a0a0a;
   z-index: 10000;
   padding: 0.5rem 0;
-  position: fixed;
-  top: 10vh;
-  transition: height 0.8s ease;
-}
-
-.navBarDesktopContainer.scrolled {
-  height: 8vh;
-}
-
-.stickySlideAnimation {
-  transform: translateY(0);
-  /* Asegurar que se mantenga en su lugar cuando se desplace */
+  margin-bottom: 3rem;
 }
 
 .userMenuDesktop {
@@ -179,8 +167,8 @@
     display: none;
   }
 
-  .no-scroll {
-    overflow: hidden;
+  .logoImg {
+    margin-top: 1rem;
   }
 
   .menuIcon {
@@ -263,6 +251,5 @@
     display: flex;
     flex-direction: column;
   }
-
 
 }

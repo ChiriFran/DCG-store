@@ -8,7 +8,7 @@
 
 .productosDestacados {
   display: flex;
-  width: 70%;
+  width: 80%;
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
