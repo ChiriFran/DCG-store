@@ -2,13 +2,11 @@ import { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
 import "../styles/ItemDetail.css";
 import { CartContext } from "../context/CartContext";
-import UserLocation from "../helpers/UserLocation"; // Importamos el nuevo componente
 
 const ItemDetail = ({ item }) => {
   const { carrito, agregarAlCarrito, eliminarDelCarrito } = useContext(CartContext);
   const [cantidad, setCantidad] = useState(1);
   const [talleSeleccionado, setTalleSeleccionado] = useState("");
-  const [pais, setPais] = useState(""); // Estado para almacenar el país del usuario
 
   const handleRestar = () => {
     setCantidad((prevCantidad) => Math.max(prevCantidad - 1, 1));
@@ -45,8 +43,6 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div className="itemDetailContainer">
-      <UserLocation setPais={setPais} />
-
       <div className="itemDetail">
         <h3 className="itemDetailTitle">{item.title}</h3>
         <p className="itemDetailPrice">$ {item.price}.-</p>
@@ -80,18 +76,6 @@ const ItemDetail = ({ item }) => {
         <p className="cantidadEnCarrito">
           Cart: {cantidadEnCarrito} unit/s added.
         </p>
-
-        <div className="paymentButtons">
-          {pais === 'Argentina' ? (
-            <button className="mercadoPagoBtn" style={{ backgroundColor: '#00A859', color: 'white', padding: '10px 20px', marginTop: '20px' }}>
-              Pagar con MercadoPago
-            </button>
-          ) : (
-            <button className="payPalBtn" style={{ backgroundColor: '#FFC439', color: 'black', padding: '10px 20px', marginTop: '20px' }}>
-              Pagar con PayPal
-            </button>
-          )}
-        </div>
 
         <p className="itemDetailDescription">{item.description}</p>
         <div className="itemDetailDescriptionList">
@@ -158,7 +142,6 @@ const ItemDetail = ({ item }) => {
       <div className="itemDetailImgContainer">
         <img className="itemDetailImg" src={item.imageDetail} alt={item.title} />
       </div>
-
     </div>
   );
 };

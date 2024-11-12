@@ -57,7 +57,9 @@ const Eventos = () => {
         {upcomingEvent && (
           <div className="eventoCard">
             <div className="imgEventosContainer">
-              <img src={upcomingEvent.image} alt="" />
+              <a href="#">{/* Re direccion a ticketera */}
+                <img src={upcomingEvent.image} alt="" />
+              </a>
             </div>
           </div>
         )}
