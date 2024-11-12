@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   background-color: #0a0a0a;
-  margin-top: 20vh;
 }
 
 .form-box-sing-up {
@@ -143,10 +142,6 @@
 }
 
 @media screen and (max-width: 700px) {
-
-  .SignUpFormContainer {
-    margin-top: 10vh;
-  }
 
   .form-box-sing-up {
     max-width: 300px;

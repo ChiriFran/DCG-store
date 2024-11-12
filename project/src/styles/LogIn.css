@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   background-color: #0a0a0a;
-  margin-top: 20vh;
 }
 
 .form-box-log-in {
@@ -174,10 +173,6 @@
 }
 
 @media screen and (max-width: 700px) {
-
-  .LogInFormContainer {
-    margin-top: 10vh;
-  }
 
   .form-box-log-in {
     max-width: 300px;

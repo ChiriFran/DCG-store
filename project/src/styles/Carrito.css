@@ -5,7 +5,7 @@
   height: auto;
   align-items: center;
   justify-content: center;
-  margin-top: 25vh;
+  margin-top: 5vh;
   color: #f4f4f4a1;
   overflow-y: auto;
   /* Permite el desplazamiento vertical */
@@ -191,10 +191,6 @@
 
 
 @media screen and (max-width: 700px) {
-
-  .carritoContainer {
-    margin-top: 10vh;
-  }
 
   .carritoCard {
     width: 90%;
