@@ -143,6 +143,11 @@
 }
 
 @media screen and (max-width: 700px) {
+
+  .SignUpFormContainer {
+    margin-top: 10vh;
+  }
+
   .form-box-sing-up {
     max-width: 300px;
   }
