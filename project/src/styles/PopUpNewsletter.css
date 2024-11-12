@@ -173,16 +173,16 @@
     margin: 3rem 0;
   }
 
+  .modalNewsletterTitle {
+    text-align: center;
+  }
+
   .modalNewsletterText {
     font-size: 0.8rem;
     font-weight: 200;
     padding: 0 8% 2rem;
   }
 
-  .modalNewsletterForm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+
 
 }

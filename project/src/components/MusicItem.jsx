@@ -17,7 +17,7 @@ const MusicItem = ({ disco }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Buy now for ${disco.price}
+          ${disco.price}.-
           <span className="bandcampBackground">
             <svg
               xmlns="http://www.w3.org/2000/svg"
