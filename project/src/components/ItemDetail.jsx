@@ -45,7 +45,7 @@ const ItemDetail = ({ item }) => {
     <div className="itemDetailContainer">
       <div className="itemDetail">
         <h3 className="itemDetailTitle">{item.title}</h3>
-        <p className="itemDetailPrice">$ {item.price}.-</p>
+        <p className="itemDetailPrice">${item.price}.-</p>
 
         <div className="sizeSelectorContainer">
           <h3>Size</h3>
@@ -89,7 +89,7 @@ const ItemDetail = ({ item }) => {
           </ul>
 
           <div className="sizeChartContainer">
-            <p>Size Chart</p>
+            <p className="sizeTitle">Size Chart</p>
             <ul>
               <li>
                 <span>SIZE A:</span><p>Marco is 1.80m and wears a Size L. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
@@ -98,31 +98,30 @@ const ItemDetail = ({ item }) => {
                 <span>SIZE B:</span><p>Nina is 1.71m and wears a Size M. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
               </li>
             </ul>
-
-            <div className="sizeGridContainer">
-              <div className="sizeGrid">
-                {/* talles */}
-                <div className="divVacio"></div>
-                <div className="talleS">S</div>
-                <div className="talleM">M</div>
-                <div className="talleL">L</div>
-                <div className="talleXL">XL</div>
-                <div className="talleXXL">XXL</div>
-                {/* largo */}
-                <div className="longitud">Length</div>
-                <div className="longitudS">60</div>
-                <div className="longitudM">62</div>
-                <div className="longitudL">66</div>
-                <div className="longitudXL">68</div>
-                <div className="longitudXXL">70</div>
-                {/* pecho */}
-                <div className="pecho">Chest</div>
-                <div className="pechoS">62</div>
-                <div className="pechoM">64</div>
-                <div className="pechoL">66</div>
-                <div className="pechoXL">68</div>
-                <div className="pechoXXL">72</div>
-              </div>
+          </div>
+          <div className="sizeGridContainer">
+            <div className="sizeGrid">
+              {/* talles */}
+              <div className="divVacio"></div>
+              <div className="talleS">S</div>
+              <div className="talleM">M</div>
+              <div className="talleL">L</div>
+              <div className="talleXL">XL</div>
+              <div className="talleXXL">XXL</div>
+              {/* largo */}
+              <div className="longitud">Length</div>
+              <div className="longitudS">60</div>
+              <div className="longitudM">62</div>
+              <div className="longitudL">66</div>
+              <div className="longitudXL">68</div>
+              <div className="longitudXXL">70</div>
+              {/* pecho */}
+              <div className="pecho">Chest</div>
+              <div className="pechoS">62</div>
+              <div className="pechoM">64</div>
+              <div className="pechoL">66</div>
+              <div className="pechoXL">68</div>
+              <div className="pechoXXL">72</div>
             </div>
           </div>
 
@@ -141,6 +140,42 @@ const ItemDetail = ({ item }) => {
 
       <div className="itemDetailImgContainer">
         <img className="itemDetailImg" src={item.imageDetail} alt={item.title} />
+        <div className="sizeChartContainerDesktop">
+          <p className="sizeTitle">Size Chart</p>
+          <ul>
+            <li>
+              <span>SIZE A:</span><p>Marco is 1.80m and wears a Size L. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
+            </li>
+            <li>
+              <span>SIZE B:</span><p>Nina is 1.71m and wears a Size M. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
+            </li>
+          </ul>
+        </div>
+        <div className="sizeGridContainerDesktop">
+          <div className="sizeGrid">
+            {/* talles */}
+            <div className="divVacio"></div>
+            <div className="talleS">S</div>
+            <div className="talleM">M</div>
+            <div className="talleL">L</div>
+            <div className="talleXL">XL</div>
+            <div className="talleXXL">XXL</div>
+            {/* largo */}
+            <div className="longitud">Length</div>
+            <div className="longitudS">60</div>
+            <div className="longitudM">62</div>
+            <div className="longitudL">66</div>
+            <div className="longitudXL">68</div>
+            <div className="longitudXXL">70</div>
+            {/* pecho */}
+            <div className="pecho">Chest</div>
+            <div className="pechoS">62</div>
+            <div className="pechoM">64</div>
+            <div className="pechoL">66</div>
+            <div className="pechoXL">68</div>
+            <div className="pechoXXL">72</div>
+          </div>
+        </div>
       </div>
     </div>
   );

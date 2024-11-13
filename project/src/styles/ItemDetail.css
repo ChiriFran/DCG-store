@@ -19,6 +19,7 @@
 
 .itemDetailImgContainer {
   display: flex;
+  flex-flow: column;
   align-items: start;
   justify-content: center;
   object-fit: contain;
@@ -28,6 +29,7 @@
 .itemDetailImg {
   width: 100%;
   margin-top: 5rem;
+  margin-bottom: 0.4rem;
 }
 
 .itemDetailTitle {
@@ -73,7 +75,7 @@
   margin: 1rem 0;
 }
 
-#size-selector{
+#size-selector {
   width: 100%;
   display: flex;
   flex-flow: row;
@@ -120,9 +122,15 @@
   color: #fff;
 }
 
+.sizeChartContainerDesktop,
+.sizeGridContainerDesktop {
+  display: block;
+}
+
 .itemDetailDescription {
   font-size: 0.8rem;
   font-weight: 400;
+  letter-spacing: 1px;
   color: #f4f4f476;
   margin: 1rem 0;
 }
@@ -139,19 +147,48 @@
   list-style-type: decimal-leading-zero;
 }
 
-.sizeChartContainer {
-  margin: 1rem 0 2rem 0;
+.sizeChartContainer,
+.sizeGridContainer {
+  display: none;
+}
+
+.sizeChartContainerDesktop {
+  margin: 1rem 0 1rem 0;
   width: 100%;
   border-top: 1px solid rgba(136, 135, 135, 0.48);
 }
 
-.sizeChartContainer p {
-  margin: 1rem 0;
+.sizeTitle {
+  font-size: 1rem;
   color: rgb(136, 135, 135);
+  margin: 1rem;
+  font-weight: 600;
 }
 
-.sizeChartContainer ul li {
+.sizeChartContainerDesktop>ul>li>p {
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  color: rgb(136, 135, 135);
+  padding: 0 1rem;
+  letter-spacing: 0.5px;
+}
+
+.sizeChartContainerDesktop span {
+  font-size: 0.8rem;
+}
+
+.sizeChartContainerDesktop ul {
+  padding-left: 2rem;
+}
+
+.sizeChartContainerDesktop ul li {
+  color: rgb(136, 135, 135);
   list-style-type: square;
+  font-size: 1rem;
+}
+
+.sizeGridContainerDesktop {
+  width: 100%;
 }
 
 .sizeGrid {
@@ -159,7 +196,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 2px;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .sizeGrid>div {
@@ -263,6 +300,7 @@
 
 .careInstructions p {
   color: rgb(136, 135, 135);
+  font-weight: 600;
 }
 
 .careInstructions ul li {
@@ -301,6 +339,11 @@
     order: 2;
   }
 
+  .sizeChartContainer,
+  .sizeGridContainer {
+    display: block;
+  }
+
   .itemDetailImgContainer {
     display: flex;
     width: 100%;
@@ -323,5 +366,24 @@
 
   .eliminarDelCarrito {
     margin: 0.5rem 0;
+  }
+
+  .sizeChartContainerDesktop,
+  .sizeGridContainerDesktop {
+    display: none;
+  }
+
+  .sizeChartContainer>ul>li>p {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+    color: rgb(136, 135, 135);
+    padding: 0 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .sizeChartContainer ul li {
+    color: rgb(136, 135, 135);
+    list-style-type: square;
+    font-size: 0.8rem;
   }
 }
