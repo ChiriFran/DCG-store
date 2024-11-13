@@ -3,7 +3,7 @@ import '../styles/ItemCount.css'
 const ItemCount = ( {cantidad, handleSumar, handleRestar, handleAgregar} ) => {
 
   return (
-    <div>
+    <div className='itemCountContainer'>
       <div className="itemCount">
         <span className='cantidadSpan'>Quantity</span>
         <button className='btnContador' onClick={handleRestar}>-</button>

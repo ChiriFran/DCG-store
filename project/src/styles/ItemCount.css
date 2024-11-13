@@ -1,11 +1,18 @@
+.itemCountContainer{
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .itemCount {
   position: relative;
   display: flex;
-  width: 100%;
+  width: 50%;
   flex-flow: row;
   align-items: center;
 }
-
 
 .cantidadSpan {
   position: absolute;
@@ -45,6 +52,7 @@
 }
 
 .agregar-al-carrito {
+  width: 50%;
   border: none;
   padding: 0.5rem 1rem;
   margin-top: 1rem;

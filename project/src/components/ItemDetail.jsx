@@ -69,12 +69,13 @@ const ItemDetail = ({ item }) => {
             handleRestar={handleRestar}
             handleAgregar={handleAgregarAlCarrito}
           />
+        </div>
+
+        <p className="cantidadEnCarrito">
+          Cart: {cantidadEnCarrito} unit/s added.
           <button className="eliminarDelCarrito" onClick={handleEliminarDelCarrito}>
             Remove
           </button>
-        </div>
-        <p className="cantidadEnCarrito">
-          Cart: {cantidadEnCarrito} unit/s added.
         </p>
 
         <p className="itemDetailDescription">{item.description}</p>
