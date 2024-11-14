@@ -20,6 +20,12 @@
     background-color: transparent;
     border-bottom: 2px solid rgba(128, 128, 128, 0.457);
     color: #f4f4f4;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.authorSearch:focus {
+    border-color: #007bff;
 }
 
 .orderSelect {
@@ -38,7 +44,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
 .orderSelect:focus {
@@ -46,13 +51,10 @@
     outline: none;
 }
 
-option {
+.option {
     color: rgb(0, 0, 0);
-    /* Cambia el color del texto */
     font-weight: bold;
-    /* Cambia el peso de la fuente */
 }
-
 
 .btnMusicBuscar {
     height: 40px;
@@ -62,20 +64,24 @@ option {
     padding: 0.6rem 1rem;
     background-color: rgba(255, 255, 255, 0.064);
     color: #f4f4f481;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnMusicBuscar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .suggestions-list {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: auto;
     list-style-type: none;
     padding: 0;
     margin: 0;
     border: 3px solid rgb(225, 225, 225);
     background: rgba(5, 5, 5, 0.998);
     color: #f4f4f4;
-    width: 180px;
-    /* Igual que el ancho del campo de búsqueda */
     max-height: 150px;
     overflow-y: auto;
     z-index: 1000;
@@ -99,6 +105,10 @@ option {
     transition: .6s;
 }
 
+.musicInputContainer {
+    position: relative;
+    display: inline-block;
+}
 
 @media screen and (max-width: 700px) {
     .music-filters {
