@@ -126,6 +126,18 @@ const ItemDetail = ({ item }) => {
             </div>
           </div>
 
+          <div className="sizeChartContainerDesktop">
+            <p className="sizeTitle">Size Chart</p>
+            <ul>
+              <li>
+                <span>SIZE A:</span><p>Marco is 1.80m and wears a Size L. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
+              </li>
+              <li>
+                <span>SIZE B:</span><p>Nina is 1.71m and wears a Size M. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
+              </li>
+            </ul>
+          </div>
+
           <div className="careInstructions">
             <p>Care Instructions</p>
             <ul>
@@ -141,17 +153,7 @@ const ItemDetail = ({ item }) => {
 
       <div className="itemDetailImgContainer">
         <img className="itemDetailImg" src={item.imageDetail} alt={item.title} />
-        <div className="sizeChartContainerDesktop">
-          <p className="sizeTitle">Size Chart</p>
-          <ul>
-            <li>
-              <span>SIZE A:</span><p>Marco is 1.80m and wears a Size L. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
-            </li>
-            <li>
-              <span>SIZE B:</span><p>Nina is 1.71m and wears a Size M. For a comfortable, relaxed fit, choose your regular size. For an oversized look, go one size up!</p>
-            </li>
-          </ul>
-        </div>
+
         <div className="sizeGridContainerDesktop">
           <div className="sizeGrid">
             {/* talles */}

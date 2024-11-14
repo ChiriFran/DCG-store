@@ -1,7 +1,7 @@
 .itemDetailContainer {
   display: flex;
   flex-flow: row;
-  align-items: start;
+  align-items: stretch;
   justify-content: center;
   width: 100%;
   padding: 0 20%;
@@ -20,16 +20,15 @@
 .itemDetailImgContainer {
   display: flex;
   flex-flow: column;
-  align-items: start;
-  justify-content: center;
-  object-fit: contain;
-  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .itemDetailImg {
   width: 100%;
   margin-top: 5rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 .itemDetailTitle {
@@ -50,15 +49,6 @@
 
 .paymentButtons {
   border-bottom: 1px solid rgba(136, 135, 135, 0.48);
-}
-
-.mercadoPagoBtn,
-.payPalBtn {
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  margin: 1rem 0;
 }
 
 .sizeSelectorContainer {
@@ -85,9 +75,9 @@
 
 .size-button {
   border: none;
-  padding: 0.5rem 0.5rem;
+  padding: 0.8rem 0.8rem;
   background-color: transparent;
-  color: rgba(225, 225, 225, 0.5);
+  color: #f1f2f6;
 }
 
 .size-button.selected {
@@ -365,7 +355,7 @@
   }
 
   .eliminarDelCarrito {
-    margin: 0.5rem 0;
+    margin: 0.5rem 1rem;
   }
 
   .sizeChartContainerDesktop,

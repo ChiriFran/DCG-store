@@ -1,50 +1,65 @@
-.itemCountContainer{
+.itemCountContainer {
   display: flex;
   flex-flow: row;
   width: 100%;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .itemCount {
   position: relative;
   display: flex;
   width: 50%;
+  height: 50px;
   flex-flow: row;
-  align-items: center;
+  align-items: end;
 }
 
 .cantidadSpan {
   position: absolute;
-  top: 0;
+  top: -2rem;
   left: 0;
   color: rgba(1, 1, 1, 0.407);
-}
-
-.cantidad {
-  font-size: 0.8rem;
-  color: #f1f2f670;
-  padding: 0.6rem 1rem;
-  margin: 0 1rem;
-  background-color: rgba(225, 225, 225, 0.1);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.445);
-
-}
-
-.cantidadSpan {
+  height: 50px;
   color: rgba(225, 225, 225, 0.5);
   font-size: 0.8rem;
   font-weight: normal;
   font-style: normal;
 }
 
+.cantidad {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-size: 0.8rem;
+  color: #f1f2f6;
+  padding: 1rem 2rem;
+  background-color: rgba(225, 225, 225, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.445);
+}
+
+.cantidad:hover {
+  background-color: rgba(225, 225, 225, 0.182);
+}
+
 .btnContador {
   border: none;
-  margin: 2rem 0;
   font-size: 1rem;
   background-color: transparent;
   color: #f1f2f670;
   padding: 0.5rem 1rem;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(225, 225, 225, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.445);
+}
+
+.btnContador:hover {
+  background-color: rgba(225, 225, 225, 0.182);
+  color: #f1f2f6;
 }
 
 .btnContador:hover {
@@ -53,12 +68,13 @@
 
 .agregar-al-carrito {
   width: 50%;
+  height: 50px;
   border: none;
-  padding: 0.5rem 1rem;
   margin-top: 1rem;
   background-color: transparent;
   color: #f1f2f6;
   font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: 2px;
   background-color: rgba(225, 225, 225, 0.1);
   border-bottom: 2px solid rgba(255, 255, 255, 0.445);
 }
