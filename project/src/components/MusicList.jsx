@@ -3,7 +3,6 @@ import MusicItem from "./MusicItem";
 import Loader from "./Loader";
 import MusicFilters from "./MusicFilters"; // Importar el componente de filtros
 import useMusicItems from "../helpers/useMusicList";  // Asegúrate de que useMusicItems se llame dentro de un componente
-
 import "../styles/MusicList.css";
 
 function MusicList() {
