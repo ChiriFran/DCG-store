@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import MusicItem from "./MusicItem";
 import Loader from "./Loader";
-import MusicFilters from "./MusicFilters"; // Importar el componente de filtros
-import useMusicItems from "../helpers/useMusicList";  // Asegúrate de que useMusicItems se llame dentro de un componente
+import MusicFilters from "./MusicFilters";
+import useMusicItems from "../helpers/useMusicList";
 import "../styles/MusicList.css";
 
 function MusicList() {
   const [filters, setFilters] = useState({
-    author: "", // Filtrado por autor
-    order: "desc", // Orden descendente por defecto
+    author: "",
+    order: "desc",
   });
-  const [discos, setDiscos] = useState([]); // Almacenar discos aquí
-  const { discos: musicData, isLoading } = useMusicItems(); // Llamar a useMusicItems directamente aquí
+  const [discos, setDiscos] = useState([]);
+  const { discos: musicData, isLoading } = useMusicItems();
 
   useEffect(() => {
     if (musicData.length > 0) {
-      setDiscos(musicData); // Almacenar los discos una vez obtenidos
+      setDiscos(musicData);
     }
-  }, [musicData]); // Dependencia para actualizar discos cuando los datos cambian
+  }, [musicData]);
 
   if (isLoading) return <Loader />;
 
@@ -25,6 +25,9 @@ function MusicList() {
   const filteredByAuthor = discos.filter((disc) =>
     disc.author.toLowerCase().includes(filters.author.toLowerCase())
   );
+
+  // Obtener lista de autores únicos
+  const uniqueAuthors = [...new Set(discos.map((disc) => disc.author))];
 
   // Ordenar discos
   const sortedDiscos = filteredByAuthor.sort((a, b) =>
@@ -37,7 +40,7 @@ function MusicList() {
 
   return (
     <>
-      <MusicFilters onSearch={handleSearch} />
+      <MusicFilters onSearch={handleSearch} authors={uniqueAuthors} />
       <div className="musicContenedor">
         {sortedDiscos.map((disc) => (
           <MusicItem disco={disc} key={disc.id} />
