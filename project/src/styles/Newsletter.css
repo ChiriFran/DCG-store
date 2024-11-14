@@ -24,6 +24,7 @@
 }
 
 .newsletterForm {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -62,7 +63,6 @@
   letter-spacing: 3px;
   transition: background-color 0.4s, color 0.4s, border-color 0.4s;
   margin-left: 1rem;
-
 }
 
 .submitButton:hover {
@@ -100,12 +100,52 @@
   border-radius: 4px;
   border: 1px solid #661717;
   text-align: center;
-  width: 200px;
-  box-sizing: border-box;
-  font-size: 1rem;
   width: 100%;
   margin-top: 20%;
 }
+
+/* Contenedor del checkbox y label */
+.doNotShowAgain {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Oculta el checkbox original */
+.doNotShowAgain input[type="checkbox"] {
+  display: none;
+}
+
+/* Estilos personalizados para el checkbox */
+.doNotShowAgain input[type="checkbox"]+label::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ffffffde;
+  background-color: #282828;
+  margin-right: 8px;
+  vertical-align: sub;
+  border-radius: 100%;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilos del checkmark al marcar el checkbox */
+.doNotShowAgain input[type="checkbox"]:checked+label::before {
+  background-color: #22ee07b3;
+}
+
+/* Estilos del label */
+.doNotShowAgain label {
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
 
 @media screen and (max-width: 700px) {
   .newsletterContainer {
@@ -113,8 +153,7 @@
     flex-flow: column;
   }
 
-  
-  .newsletterTitle{
+  .newsletterTitle {
     text-align: center;
   }
 
@@ -127,5 +166,4 @@
   .newsletterForm {
     width: 100%;
   }
-
 }

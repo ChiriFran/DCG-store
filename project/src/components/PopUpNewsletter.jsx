@@ -9,20 +9,19 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [doNotShow, setDoNotShow] = useState(false);
 
-  // Mostrar modal con animación y deshabilitar scroll
   useEffect(() => {
-    if (isOpen) {
+    const showPopUp = localStorage.getItem("doNotShowPopUp") !== "true";
+    if (isOpen && showPopUp) {
       setTimeout(() => {
-        setIsVisible(true); // Mostrar el modal después de un pequeño retardo para la animación
+        setIsVisible(true);
       }, 10);
-      document.body.style.overflow = "hidden"; // Deshabilitar el scroll
-      window.scrollTo(0, 0); // Forzar el scroll hacia arriba
-    } else {
-      setIsVisible(false);
+      document.body.style.overflow = "hidden";
+      window.scrollTo(0, 0);
     }
     return () => {
-      document.body.style.overflow = "auto"; // Restaurar el scroll al cerrar el modal
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
@@ -42,7 +41,6 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
     }
 
     try {
-      // Verificar si el correo ya está registrado
       const emailQuery = query(collection(db, "newsletter"), where("email", "==", email));
       const querySnapshot = await getDocs(emailQuery);
 
@@ -52,7 +50,6 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
         return;
       }
 
-      // Añadir el correo a la base de datos
       await addDoc(collection(db, "newsletter"), {
         email: email,
         timestamp: new Date(),
@@ -61,10 +58,9 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
       setEmail("");
       setSuccessMessage("You are already subscribed to our Newsletter!");
 
-      // Cerrar el modal después de 3 segundos
       setTimeout(() => {
         setSuccessMessage("");
-        handleClose(); // Cerrar el modal automáticamente
+        handleClose();
       }, 3000);
     } catch (error) {
       console.error("Error adding document: ", error);
@@ -75,10 +71,17 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
   };
 
   const handleClose = () => {
-    setIsVisible(false); // Ocultar modal
+    setIsVisible(false);
+    if (doNotShow) {
+      localStorage.setItem("doNotShowPopUp", "true");
+    }
     setTimeout(() => {
-      onClose(); // Llamar al cierre del modal después de la animación
-    }, 300); // Asegurarse de que la animación termine antes de cerrar
+      onClose();
+    }, 300);
+  };
+
+  const handleCheckboxChange = () => {
+    setDoNotShow(!doNotShow);
   };
 
   if (!isOpen) return null;
@@ -91,7 +94,7 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
       <dialog
         className={`popupNewsletter ${isVisible ? "open" : ""}`}
         open
-        onClick={(e) => e.stopPropagation()} // Evitar cerrar el modal al hacer click dentro
+        onClick={(e) => e.stopPropagation()}
       >
         <button className="modalCloseButton" onClick={handleClose}>
           X
@@ -122,6 +125,15 @@ const PopUpNewsletter = ({ isOpen, onClose }) => {
             </button>
             {successMessage && <p className="modalSuccessMessage">{successMessage}</p>}
           </form>
+          <div className="doNotShowAgain">
+            <input
+              type="checkbox"
+              id="doNotShow"
+              checked={doNotShow}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="doNotShow">Do not show again</label>
+          </div>
         </div>
       </dialog>
     </div>
