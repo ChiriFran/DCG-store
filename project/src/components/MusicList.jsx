@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MusicItem from "./MusicItem";
 import Loader from "./Loader";
 import MusicFilters from "./MusicFilters";
+import NoResultFound from "./NoResultsFound";
 import useMusicItems from "../helpers/useMusicList";
 import "../styles/MusicList.css";
 
@@ -41,11 +42,15 @@ function MusicList() {
   return (
     <>
       <MusicFilters onSearch={handleSearch} authors={uniqueAuthors} />
-      <div className="musicContenedor">
-        {sortedDiscos.map((disc) => (
-          <MusicItem disco={disc} key={disc.id} />
-        ))}
-      </div>
+      {sortedDiscos.length === 0 ? ( // Verificar si no hay resultados
+        <NoResultFound searchTerm={filters.author} /> // Pasar el término de búsqueda como prop
+      ) : (
+        <div className="musicContenedor">
+          {sortedDiscos.map((disc) => (
+            <MusicItem disco={disc} key={disc.id} />
+          ))}
+        </div>
+      )}
     </>
   );
 }
