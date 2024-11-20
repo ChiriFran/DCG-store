@@ -6,17 +6,3 @@
   align-items: center;
   justify-content: start;
 }
-
-.inicioVideo {
-  display: flex;
-  width: 100%;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-span {
-  font-weight: 900;
-  font-style: italic;
-}
