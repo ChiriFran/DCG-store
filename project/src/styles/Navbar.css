@@ -53,10 +53,7 @@
   margin: 0 0.5rem;
 }
 
-
 .brand {
-  letter-spacing: 4px;
-  font-size: 0.5rem;
   display: none;
 }
 
@@ -78,8 +75,13 @@
 }
 
 .userMenuDesktop li {
-  padding: 0 1rem;
   font-size: 0.8rem;
+}
+
+.usernameNav{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .navMenuDesktop {

@@ -1,13 +1,17 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import "../styles/Navbar.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { useUser } from "../context/UserContext"; // Usar el contexto de usuario
 import logo from '../../media/logo/logo.svg';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { carrito } = useContext(CartContext);
+
+  // Obtener el estado del usuario desde el contexto
+  const { userEmail, loggedIn } = useUser();
+  const navigate = useNavigate();
 
   const menuRef = useRef();
   const location = useLocation();
@@ -19,7 +23,11 @@ const Navbar = () => {
     document.body.classList.toggle("no-scroll");
   };
 
-  const handleLogout = () => setIsLoggedIn(false);
+  const handleUserClick = () => {
+    if (loggedIn) {
+      navigate("/LogIn"); // Redirigir al LogIn sin hacer logout
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -35,11 +43,11 @@ const Navbar = () => {
     <>
       <nav className={`nav ${showMenu ? "active" : ""}`}>
         <ul className="userMenuDesktop">
-          {isLoggedIn ? (
+          {loggedIn ? (
             <li>
-              <Link to="/" className="link" onClick={handleLogout}>
-                Log out
-              </Link>
+              <button className="link usernameNav" onClick={handleUserClick}>
+                {userEmail} {/* Hacer clic en el nombre para ir al LogIn */}
+              </button>
             </li>
           ) : (
             <li>
@@ -90,9 +98,9 @@ const Navbar = () => {
           </ul>
 
           <ul className="userMenu">
-            {isLoggedIn ? (
+            {loggedIn ? (
               <li>
-                <Link to="/" className="link" onClick={handleLogout}>Log out</Link>
+                <button className="link usernameNav" onClick={handleUserClick}>{userEmail}</button> {/* Redirigir al LogIn */}
               </li>
             ) : (
               <>
