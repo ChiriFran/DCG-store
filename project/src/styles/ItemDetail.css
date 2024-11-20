@@ -79,6 +79,12 @@
   padding: 0.8rem 0.8rem;
   background-color: transparent;
   color: #f1f2f6;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+
+.size-button:hover{
+  background-color: rgba(225, 225, 225, 0.1);
+
 }
 
 .size-button.selected {
