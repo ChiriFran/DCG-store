@@ -1,14 +1,17 @@
-// Carrito.jsx
 import { useContext, useState, useEffect } from "react";
 import "../styles/Carrito.css";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { getUserLocation } from "../helpers/UserLocation";
+import axios from "axios";
 import ItemListContainerDestacados from "./ItemListContainerDestacados";
 
 const Carrito = () => {
   const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext);
   const [pais, setPais] = useState("");
+
+  // Código postal de origen (ajústalo según tu ubicación)
+  const zipCode = "1706";
 
   useEffect(() => {
     if (carrito.length > 0) {
@@ -21,6 +24,25 @@ const Carrito = () => {
       obtenerPais();
     }
   }, [carrito.length]);
+
+  const handleMercadoPago = async () => {
+    try {
+      // Ejemplo de costo de envío (ajusta según la lógica de tu negocio)
+      const shippingCost = pais === "Argentina" ? 500 : 0;
+
+      const response = await axios.post("http://localhost:3001/crear-preferencia", {
+        items: carrito,
+        shippingCost,
+        zipCode,
+      });
+
+      if (response.data.id) {
+        window.location.href = `https://www.mercadopago.com/checkout/v1/redirect?pref_id=${response.data.id}`;
+      }
+    } catch (error) {
+      console.error("Error al procesar el pago con Mercado Pago", error);
+    }
+  };
 
   const handleVaciar = () => {
     vaciarCarrito();
@@ -67,7 +89,7 @@ const Carrito = () => {
               </div>
               <div className="finalizarCompraContainer">
                 {pais === "Argentina" ? (
-                  <button className="mercadoPagoBtn" >
+                  <button onClick={handleMercadoPago} className="mercadoPagoBtn">
                     Checkout MP
                   </button>
                 ) : (
@@ -76,7 +98,7 @@ const Carrito = () => {
                   </button>
                 )}
                 <button onClick={handleVaciar} className="vaciarCarrito">
-                empty cart
+                  empty cart
                 </button>
               </div>
             </div>
