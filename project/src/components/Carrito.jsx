@@ -9,9 +9,7 @@ import ItemListContainerDestacados from "./ItemListContainerDestacados";
 const Carrito = () => {
   const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext);
   const [pais, setPais] = useState("");
-
-  // Código postal de origen (ajústalo según tu ubicación)
-  const zipCode = "1706";
+  const [zipCode, setZipCode] = useState(""); // Código postal del usuario
 
   useEffect(() => {
     if (carrito.length > 0) {
@@ -27,15 +25,23 @@ const Carrito = () => {
 
   const handleMercadoPago = async () => {
     try {
-      // Ejemplo de costo de envío (ajusta según la lógica de tu negocio)
-      const shippingCost = pais === "Argentina" ? 500 : 0;
+      // Formatea los productos del carrito para la preferencia de Mercado Pago
+      const items = carrito.map((prod) => ({
+        title: prod.title,         // Nombre del producto
+        unit_price: prod.price,    // Precio unitario (número)
+        quantity: prod.cantidad,   // Cantidad (entero)
+      }));
 
-      const response = await axios.post("http://localhost:3001/crear-preferencia", {
-        items: carrito,
-        shippingCost,
-        zipCode,
-      });
+      // Llama a la función de Firebase para crear la preferencia con Mercado Pago
+      const response = await axios.post(
+        "https://us-central1-dcg-store.vercel.app/.cloudfunctions.net/crearPreferencia",
+        {
+          items,      // Productos en el formato correcto
+          zipCode,    // Código postal del usuario
+        }
+      );
 
+      // Redirige al usuario a Mercado Pago si se genera una preferencia
       if (response.data.id) {
         window.location.href = `https://www.mercadopago.com/checkout/v1/redirect?pref_id=${response.data.id}`;
       }
@@ -52,7 +58,9 @@ const Carrito = () => {
     <div className="carritoContainer">
       <div className="carritoCard">
         <h1 className="carritoTitle">
-          {carrito.length > 0 ? "Shopping Cart" : "Oops, you don't have any items in your cart! Here below are some of our products"}
+          {carrito.length > 0
+            ? "Shopping Cart"
+            : "Oops, you don't have any items in your cart! Here below are some of our products"}
         </h1>
         {carrito.length > 0 ? (
           <>
@@ -73,9 +81,7 @@ const Carrito = () => {
                   <p className="mobileCantidad">Quantity: </p>
                   {prod.cantidad}
                 </h3>
-                <h3 className="precioTotal">
-                  ${prod.price * prod.cantidad}
-                </h3>
+                <h3 className="precioTotal">${prod.price * prod.cantidad}</h3>
               </div>
             ))}
             <h2 className="precioFinal">Total: ${precioTotal()}</h2>
@@ -93,9 +99,7 @@ const Carrito = () => {
                     Checkout MP
                   </button>
                 ) : (
-                  <button className="payPalBtn">
-                    Checkout PAYPAL
-                  </button>
+                  <button className="payPalBtn">Checkout PAYPAL</button>
                 )}
                 <button onClick={handleVaciar} className="vaciarCarrito">
                   empty cart
